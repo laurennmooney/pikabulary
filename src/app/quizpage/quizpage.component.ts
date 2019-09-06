@@ -8,14 +8,17 @@ import { PokequizService } from '../pokequiz.service';
 })
 export class QuizpageComponent implements OnInit {
   pokemon: any;
+  pokemonList: any[] = [];
+  index: number = 0;
 
   constructor(private pokequizService: PokequizService) { }
 
   ngOnInit() {
-    this.pokequizService.getPokemon().subscribe(response => {
-      console.log(response);
-    })
-    console.log(this.pokemon);
+    this.pokemonList = this.pokequizService.getPokemonList();
+    console.log(this.pokemonList);
   }
 
+  nextQuestion() {
+    this.index++;
+  }
 }
