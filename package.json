@@ -3,14 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+  "start": "node server.js",
+  "serve": "ng serve",
+  "build": "ng build",
+  "test": "ng test",
+  "lint": "ng lint",
+  "e2e": "ng e2e",
+  "heroku-postbuild": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~8.1.1",
     "@angular/animations": "~8.1.1",
     "@angular/common": "~8.1.1",
     "@angular/compiler": "~8.1.1",
@@ -26,6 +29,7 @@
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
+  "engines": { "node": "10.15.3", "npm": "6.9.0" },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.1",
     "@angular/cli": "~8.1.1",
