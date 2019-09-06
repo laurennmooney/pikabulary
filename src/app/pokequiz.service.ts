@@ -41,9 +41,5 @@ export class PokequizService {
         return false;
       }
     }
-
-  getScores(): Observable<any> {
-    return this.http.get("http://localhost:8080/grade_3");
   }
-}
 }
