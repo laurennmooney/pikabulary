@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PokequizService } from './pokequiz.service';
 import { QuizpageComponent } from './quizpage/quizpage.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -12,7 +15,8 @@ import { QuizpageComponent } from './quizpage/quizpage.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [PokequizService],
   bootstrap: [AppComponent]
