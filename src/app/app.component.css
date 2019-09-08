@@ -1,0 +1,12 @@
+header {
+    background: #DE4841;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 5px;
+}

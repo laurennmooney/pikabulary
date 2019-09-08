@@ -1,0 +1,40 @@
+<main>
+  <div id="mainContainer">
+    <form #startGameForm="ngForm" (ngSubmit)="onSubmit(startGameForm)">
+      <h2>Welcome Trainer!</h2>
+      <label>Enter your name to begin!</label>
+      <input
+        type="text"
+        placeholder="Your name here!"
+        name="userName"
+        ngModel
+      />
+      <h3>Select your grade level</h3>
+      <div class="gradeSelectionSection">
+        <label>
+          <input
+            type="radio"
+            name="gradeLevel"
+            value="grade_3"
+            ngModel
+          />3rd</label
+        >
+
+        <label>
+          <input type="radio" name="gradeLevel" value="grade_4"
+          ngModel/>4th</label
+        >
+
+        <label>
+          <input
+            type="radio"
+            name="gradeLevel"
+            value="grade_5"
+            ngModel
+          />5th</label
+        >
+      </div>
+      <button id="goButton">Let's go!</button>
+    </form>
+  </div>
+</main>
