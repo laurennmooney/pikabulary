@@ -29,6 +29,5 @@ questionsRoutes.get("/grade_5",(req, res) => {
     });
 });
 
-// questionsRoutes.get("/grade_3", getQuestions);
 
 module.exports = questionsRoutes;
