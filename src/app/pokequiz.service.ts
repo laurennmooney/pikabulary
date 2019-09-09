@@ -11,6 +11,8 @@ export class PokequizService {
   randomPokemon: any;
   selectedNumbers: number[] = [];
   duplicate: boolean;
+  questionList: any;
+  username: string;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -45,7 +47,14 @@ export class PokequizService {
     }
   }
 
-  submitUserInformation() {
-    
+  submitUserInformation(username: string, gradeLevel: string) {
+    console.log(username);
+    console.log(gradeLevel);
+    this.username = username;
+    this.questionList = this.http.get(`http://localhost:8080/${gradeLevel}`);
+  }
+
+  getQuestionList() {
+    return this.questionList;
   }
 }

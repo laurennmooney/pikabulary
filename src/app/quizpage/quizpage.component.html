@@ -1,7 +1,15 @@
 <h1>Quiz Page</h1>
-<div>
-    <p>{{ pokemonList[index].name }}</p>
-    <p>{{ pokemonList[index].id }}</p>
-    <img src="{{ pokemonList[index].sprites.front_default }}">
-    <button (click)="nextQuestion()">Next</button>
+<div id="questionContainer">
+  <form #questionForm="ngForm" (ngSubmit)="checkAnswer(questionForm, index)">
+    <h3>{{ questionList[index].question_name }}</h3>
+    <label><input type="radio" name="choice" value="{{ questionList[index].choice_1 }}" ngModel/>{{ questionList[index].choice_1 }}</label>
+    <label><input type="radio" name="choice" value="{{ questionList[index].choice_2 }}" ngModel/>{{ questionList[index].choice_2 }}</label>
+    <label><input type="radio" name="choice" value="{{ questionList[index].choice_3 }}" ngModel/>{{ questionList[index].choice_3 }}</label>
+    <label><input type="radio" name="choice" value="{{ questionList[index].choice_4 }}" ngModel/>{{ questionList[index].choice_4 }}</label>
+    <button>Throw Pokeball!</button>
+  </form>
+</div>
+<div id="pokemonImageContainer">
+  <img src="{{ pokemonList[index].sprites.front_default }}" />
+  <button (click)="nextQuestion()">Next</button>
 </div>
