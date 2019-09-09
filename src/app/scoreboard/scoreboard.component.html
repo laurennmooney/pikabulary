@@ -1,1 +1,12 @@
-<p>scoreboard works!</p>
+<main>
+    <div id="scoreboardContainer">
+        <h1 id="scoreboardTitle">Scoreboard</h1>
+        <div id="scoreList">
+            <div id="userScore" *ngFor="let score of scoreboard">
+                <p>{{ score.username }}</p>
+                <p>{{ score.score }}</p>
+            </div>
+        </div>
+        <button routerLink="/home">Play again!</button>
+    </div>
+</main>
