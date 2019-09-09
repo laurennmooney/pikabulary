@@ -65,4 +65,8 @@ export class PokequizService {
   sendResultsToResultsComponent() {
     return this.results;
   }
+
+  getScoreboard() {
+    return this.http.get("http://localhost:8080/scores");
+  }
 }
