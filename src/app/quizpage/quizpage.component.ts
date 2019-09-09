@@ -47,13 +47,14 @@ export class QuizpageComponent implements OnInit {
     console.log(`Number wrong: ${this.numberWrong}`);
     this.nextQuestion();
     form.reset();
-    this.endQuizAndGoToResults();
-  }
-
-  endQuizAndGoToResults() {
     if (this.numberWrong === 3) {
       console.log("You have three wrong");
-      this.router.navigateByUrl("/results");
+      this.endQuizAndGoToResults(this.numberCorrect, this.caughtPokemon);
     }
+  }
+
+  endQuizAndGoToResults(numberCorrect: number, pokemonCaught: any[]) {
+    this.pokequizService.setResults(numberCorrect, pokemonCaught);
+    this.router.navigateByUrl("/results");
   }
 }

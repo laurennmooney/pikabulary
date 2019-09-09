@@ -13,7 +13,8 @@ export class PokequizService {
   duplicate: boolean;
   questionList: any;
   username: string;
-  caughtPokemon: any;
+  // caughtPokemon: any;
+  results: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -21,20 +22,14 @@ export class PokequizService {
     for (let i = 0; i <= 50; i++) {
       const randomId = Math.floor(Math.random() * 151) + 1;
       console.log(randomId);
-      // this.selectedNumbers.push(randomId);
-      // this.duplicate = this.checkForDuplicate(randomId);
-      // console.log(this.duplicate);
-
-      // if (this.duplicate === false) {
-        this.http
-          .get(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
-          .subscribe(response => {
-            this.pokemonList.push(response);
-          });
-        // console.log(this.selectedNumbers);
-      }
-      return this.pokemonList;
+      this.http
+        .get(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
+        .subscribe(response => {
+          this.pokemonList.push(response);
+        });
     }
+    return this.pokemonList;
+  }
 
   checkForDuplicate(randomId: number) {
     if (this.selectedNumbers.length > 0) {
@@ -57,5 +52,17 @@ export class PokequizService {
 
   getQuestionList() {
     return this.questionList;
+  }
+
+  setResults(numberCorrect: number, pokemonCaught: any[]) {
+    this.results = {
+      username: this.username,
+      score: numberCorrect,
+      caughtPokemon: pokemonCaught
+    }
+  }
+
+  sendResultsToResultsComponent() {
+    return this.results;
   }
 }
