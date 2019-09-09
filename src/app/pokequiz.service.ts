@@ -15,6 +15,7 @@ export class PokequizService {
   username: string;
   results: any;
   currentUserScore: object;
+  scoreboard: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -70,12 +71,19 @@ export class PokequizService {
   sendResultsToResultsComponent() {
     return this.results;
   }
+  
+  setUserScore() {
+    return this.currentUserScore;
+  }
 
   postToScoreboard() {
     console.log(this.currentUserScore);
+    this.http.post("http://localhost:8080/scores", this.setUserScore()).subscribe(response => {
+      this.scoreboard = response;
+    });
   }
 
   getScoreboard() {
-    return this.http.get("http:/localhost:8080/scores");
+    return this.http.get("http://localhost:8080/scores");
   }
 }
