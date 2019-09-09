@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { PokequizService } from "../pokequiz.service";
-import { NgForm } from '@angular/forms';
+import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "quizpage",
@@ -13,9 +14,12 @@ export class QuizpageComponent implements OnInit {
   index: number = 0;
   questionList: any;
   numberCorrect: number = 0;
-  numberWrong: number = 3;
+  numberWrong: number = 0;
 
-  constructor(private pokequizService: PokequizService) {}
+  constructor(
+    private pokequizService: PokequizService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.pokemonList = this.pokequizService.getPokemonList();
@@ -31,9 +35,20 @@ export class QuizpageComponent implements OnInit {
   }
 
   checkAnswer(form: NgForm, index: number) {
-    console.log(form);
-    console.log(form.value.choice);
-    console.log(index);
+    if (form.value.choice === this.questionList[index].answer) {
+      this.numberCorrect++;
+    } else {
+      this.numberWrong++;
+    }
+    console.log(`Number correct: ${this.numberCorrect}`);
+    console.log(`Number wrong: ${this.numberWrong}`);
+    this.endQuizAndGoToResults();
   }
 
+  endQuizAndGoToResults() {
+    if (this.numberWrong === 3) {
+      console.log("You have three wrong");
+      this.router.navigateByUrl("/results");
+    }
+  }
 }
