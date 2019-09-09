@@ -50,6 +50,7 @@ export class QuizpageComponent implements OnInit {
     if (this.numberWrong === 3) {
       console.log("You have three wrong");
       this.endQuizAndGoToResults(this.numberCorrect, this.caughtPokemon);
+      this.pokequizService.postToScoreboard();
     }
   }
 

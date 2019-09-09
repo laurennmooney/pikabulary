@@ -8,12 +8,15 @@ import { PokequizService } from '../pokequiz.service';
 })
 export class ResultspageComponent implements OnInit {
   results: any;
+  caughtPokemon: any[];
 
   constructor(private pokequizService: PokequizService) { }
 
   ngOnInit() {
     this.results = this.pokequizService.sendResultsToResultsComponent();
     console.log(this.results);
+    this.caughtPokemon = this.results.caughtPokemon;
+    console.log(this.caughtPokemon);
   }
 
 }

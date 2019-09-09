@@ -1,1 +1,6 @@
 <p>resultspage works!</p>
+<p>Congrats, {{ results.username }}!</p>
+<p>You caught {{ results.score }} Pokemon!</p>
+<div *ngFor="let pokemon of caughtPokemon; index as i">
+    <img src="{{ pokemon.sprites.front_default }}">
+</div>
