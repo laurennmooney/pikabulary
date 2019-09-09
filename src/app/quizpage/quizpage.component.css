@@ -1,6 +1,63 @@
-body {
+main {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../../assets/pokemon-nature-background-2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#scoreBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+#pokemonCounter, #wrongAnswerCounter {
+  margin: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+#pokemonCounter {
+  background: rgba(244, 226, 147, 0.767);
+}
+
+#wrongAnswerCounter {
+  background: rgba(112, 112, 112, 0.767);
+}
+
+.number {
+  display: block;
+}
+
+#questionContainer {
+  background: white;
+  box-shadow: 0px 0px 10px 0px #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 75%;
+  height: 50%;
+}
+
+#choicesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pokemonImageContainer {
+  /* flex-grow: 2; */
+}
+
+#pokemonImage {
+  height: 300px;
+  margin-top: 100px;
 }
 
 /* Ball object to be animated */
