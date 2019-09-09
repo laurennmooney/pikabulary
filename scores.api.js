@@ -4,6 +4,7 @@ const pool = require("./connection");
 
 function getScoreboard(req, res) {
     pool.query("select * from scores order by score desc, username").then((result) => {
+        console.log("get for scores works");
         res.send(result.rows);
         // console.log("Get scores works");
     });
@@ -18,6 +19,7 @@ scoresRoutes.post("/scores", (req, res) => {
         req.body.score
         ])
             .then(() => {
+            console.log("post scores works");
             getScoreboard(req, res);
             // console.log("Post works");
         });

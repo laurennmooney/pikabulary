@@ -9,11 +9,13 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { InstructionsComponent } from './instructions/instructions.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { FormsModule } from '@angular/forms';
+import { ResultspageComponent } from './resultspage/resultspage.component';
 
 const appRoutes: Routes = [
   { path: "home", component: LandingpageComponent },
   { path: "instructions", component: InstructionsComponent },
   { path: "quiz", component: QuizpageComponent},
+  { path: "results", component: ResultspageComponent },
   { path: "scores", component: ScoreboardComponent },
   { path: '', redirectTo: "/home", pathMatch: "full"},
 ];
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     QuizpageComponent,
     LandingpageComponent,
     InstructionsComponent,
-    ScoreboardComponent
+    ScoreboardComponent,
+    ResultspageComponent
   ],
   imports: [
     BrowserModule,

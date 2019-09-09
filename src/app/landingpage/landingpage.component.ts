@@ -17,6 +17,7 @@ export class LandingpageComponent implements OnInit {
   
   onSubmit(form: NgForm) {
     console.log(form.value);
+    this.pokequizService.submitUserInformation(form.value.userName, form.value.gradeLevel);
     this.goToInstructions();
   }
 
