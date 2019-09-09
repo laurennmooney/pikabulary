@@ -15,6 +15,7 @@ export class QuizpageComponent implements OnInit {
   questionList: any;
   numberCorrect: number = 0;
   numberWrong: number = 0;
+  caughtPokemon: any[] = [];
 
   constructor(
     private pokequizService: PokequizService,
@@ -37,11 +38,15 @@ export class QuizpageComponent implements OnInit {
   checkAnswer(form: NgForm, index: number) {
     if (form.value.choice === this.questionList[index].answer) {
       this.numberCorrect++;
+      this.caughtPokemon.push(this.pokemonList[index]);
+      console.log(this.caughtPokemon);
     } else {
       this.numberWrong++;
     }
     console.log(`Number correct: ${this.numberCorrect}`);
     console.log(`Number wrong: ${this.numberWrong}`);
+    this.nextQuestion();
+    form.reset();
     this.endQuizAndGoToResults();
   }
 

@@ -13,6 +13,7 @@ export class PokequizService {
   duplicate: boolean;
   questionList: any;
   username: string;
+  caughtPokemon: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
