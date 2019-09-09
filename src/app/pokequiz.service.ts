@@ -13,8 +13,8 @@ export class PokequizService {
   duplicate: boolean;
   questionList: any;
   username: string;
-  // caughtPokemon: any;
   results: any;
+  currentUserScore: object;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -60,13 +60,18 @@ export class PokequizService {
       score: numberCorrect,
       caughtPokemon: pokemonCaught
     }
+
+    this.currentUserScore = {
+      username: this.username,
+      score: numberCorrect
+    }
   }
 
   sendResultsToResultsComponent() {
     return this.results;
   }
 
-  getScoreboard() {
-    return this.http.get("http://localhost:8080/scores");
+  postToScoreboard() {
+    console.log(this.currentUserScore);
   }
 }
