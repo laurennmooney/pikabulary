@@ -48,4 +48,8 @@ export class PokequizService {
   submitUserInformation() {
     
   }
+
+  getScoreboard() {
+    return this.http.get("http://localhost:8080/scores");
+  }
 }

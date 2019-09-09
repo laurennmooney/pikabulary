@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokequizService } from '../pokequiz.service';
 
 @Component({
   selector: 'app-scoreboard',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scoreboard.component.css']
 })
 export class ScoreboardComponent implements OnInit {
+  scoreboard: any;
 
-  constructor() { }
+  constructor(private pokequizService: PokequizService) {}
 
   ngOnInit() {
-  }
+    this.pokequizService.getScoreboard().subscribe(response => {
+      this.scoreboard = response;
+      console.log(this.scoreboard);
+    });
+}
 
 }

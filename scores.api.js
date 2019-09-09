@@ -9,6 +9,8 @@ function getScoreboard(req, res) {
     });
 }
 
+scoresRoutes.get("/scores", getScoreboard);
+
 
 scoresRoutes.post("/scores", (req, res) => {
         pool.query("Insert into scores(username, score) values ($1::text, $2::int)", [
