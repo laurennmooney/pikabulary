@@ -74,4 +74,8 @@ export class PokequizService {
   postToScoreboard() {
     console.log(this.currentUserScore);
   }
+
+  getScoreboard() {
+    return this.http.get("http:/localhost:8080/scores");
+  }
 }
