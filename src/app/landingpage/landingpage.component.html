@@ -8,7 +8,7 @@
         placeholder="Your name here!"
         name="userName"
         id="name"
-        ngModel
+        [(ngModel)]="userName"
       />
       <div id="gradeSelectionSection">
       <h3>Select your grade level</h3>
@@ -39,7 +39,7 @@
         ></div>
       </div>
     </div>
-      <button id="goButton">Let's go!</button>
+      <button id="goButton" [disabled]="!userName">Let's go!</button>
     </form>
   </div>
 </main>

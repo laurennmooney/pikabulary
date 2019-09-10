@@ -20,7 +20,15 @@ main {
   width: 70%;
 }
 
-#instructionsTitle {
+#welcomeHeader h2, h3 {
+  margin: 0;
+}
+
+#welcomeHeader {
+  margin-bottom: 20px;
+}
+
+#instruction h3, p {
   margin: 0;
 }
 
@@ -28,7 +36,7 @@ main {
   align-self: center;
   width: 60%;
   padding: 10px 5px;
-  margin: 10px;
+  margin: 15px 0 10px 0;
 }
 
 /* media queries */
