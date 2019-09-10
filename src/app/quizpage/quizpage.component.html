@@ -8,47 +8,61 @@
     </p>
   </div>
   <div id="questionContainer">
-    <form id="questionForm" #questionForm="ngForm" (ngSubmit)="checkAnswer(questionForm, index)">
+    <form
+      id="questionForm"
+      #questionForm="ngForm"
+      (ngSubmit)="checkAnswer(questionForm, index)"
+    >
       <h3 id="question">{{ questionList[index].question_name }}</h3>
       <div id="choicesContainer">
-        <label
-          ><input
-            type="radio"
-            name="choice"
-            value="{{ questionList[index].choice_1 }}"
-            ngModel
-          />{{ questionList[index].choice_1 }}</label
-        >
-        <label
-          ><input
-            type="radio"
-            name="choice"
-            value="{{ questionList[index].choice_2 }}"
-            ngModel
-          />{{ questionList[index].choice_2 }}</label
-        >
-        <label
-          ><input
-            type="radio"
-            name="choice"
-            value="{{ questionList[index].choice_3 }}"
-            ngModel
-          />{{ questionList[index].choice_3 }}</label
-        >
-        <label
-          ><input
-            type="radio"
-            name="choice"
-            value="{{ questionList[index].choice_4 }}"
-            ngModel
-          />{{ questionList[index].choice_4 }}</label
-        >
+        <input
+          id="choice1"
+          type="radio"
+          name="choice"
+          value="{{ questionList[index].choice_1 }}"
+          ngModel
+        /><label for="choice1" id="answerChoiceLabel">{{
+          questionList[index].choice_1
+        }}</label>
+        <input
+          id="choice2"
+          type="radio"
+          name="choice"
+          value="{{ questionList[index].choice_2 }}"
+          ngModel
+        /><label for="choice2" id="answerChoiceLabel">{{
+          questionList[index].choice_2
+        }}</label>
+        <input
+          id="choice3"
+          type="radio"
+          name="choice"
+          value="{{ questionList[index].choice_3 }}"
+          ngModel
+        /><label for="choice3" id="answerChoiceLabel">{{
+          questionList[index].choice_3
+        }}</label>
+        <input
+          id="choice4"
+          type="radio"
+          name="choice"
+          value="{{ questionList[index].choice_4 }}"
+          ngModel
+        /><label for="choice4" id="answerChoiceLabel">{{
+          questionList[index].choice_4
+        }}</label>
       </div>
-      <button id="throwButton"><img src="https://img.icons8.com/color/48/000000/pokeball--v2.png"> Throw Pokeball!</button>
+      <button id="throwButton">
+        <img src="https://img.icons8.com/color/48/000000/pokeball--v2.png" />
+        Throw Pokeball!
+      </button>
     </form>
   </div>
   <div id="pokemonImageContainer">
-    <img id="pokemonImage" src="{{ pokemonList[index].sprites.front_default }}" />
+    <img
+      id="pokemonImage"
+      src="{{ pokemonList[index].sprites.front_default }}"
+    />
   </div>
 
   <!-- <div class="ball2">

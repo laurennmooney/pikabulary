@@ -16,3 +16,7 @@ nav a {
 nav a:hover {
     font-weight: normal;
 }
+
+header .active {
+    font-weight: normal;
+}
