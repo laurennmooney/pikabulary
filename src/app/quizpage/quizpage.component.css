@@ -1,10 +1,10 @@
 main {
+  padding-top: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../../assets/pokemon-nature-background-2.jpg");
+  height: calc(100vh - 60px);
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../../assets/pokemon-nature-background-2.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center bottom;
@@ -26,11 +26,11 @@ main {
 }
 
 #pokemonCounter {
-  background: rgba(244, 226, 147, 0.767);
+  background: #6FCB3F;
 }
 
 #wrongAnswerCounter {
-  background: rgba(112, 112, 112, 0.767);
+  background: #DE4841;
 }
 
 .number {
@@ -45,8 +45,8 @@ main {
   align-items: center;
   text-align: center;
   margin: 15px;
-  padding: 20px;
-  width: 75%;
+  padding: 15px 10px;
+  width: 80%;
   /* height: 20%; */
 }
 
@@ -62,14 +62,40 @@ main {
 }
 
 #choicesContainer {
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px 0;
+  width: 75%;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+#answerChoiceLabel {
+  margin: 2px;
+  padding: 5px 40px;
+  width: 100%;
+} 
+
+#answerChoiceLabel:hover {
+  background: lightgrey;
+  padding: 5px 40px;
+  width: 100%
+}
+
+input[type=radio]:checked+#answerChoiceLabel {
+  background: rgba(128, 128, 128, 0.692);
+  padding: 5px 40px;
+  width: 100%;
 }
 
 #pokemonImageContainer {
-  margin-top: 100px;
+  margin-top: 5%;
+  position: fixed;
+  bottom: 0;
 }
 
 #pokemonImage {
@@ -169,10 +195,45 @@ main {
 
 /* Media queries */
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 800px) {
   main {
     background-attachment: fixed;
     background-position: center bottom;
-    /* background-repeat: repeat; */
+  }
+
+  form {
+    width: 90%;
+  }
+
+  #choicesContainer {
+    font-size: 14px;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  #answerChoiceLabel {
+    margin: 5px;
+    padding: 10px 15px;
+  } 
+  
+  #answerChoiceLabel:hover {
+    background: lightgrey;
+    padding: 10px 15px;
+  }
+  
+  input[type=radio]:checked+#answerChoiceLabel {
+    background: rgba(128, 128, 128, 0.692);
+    padding: 10px 15px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  #choicesContainer {
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    width: 70%;
   }
 }
