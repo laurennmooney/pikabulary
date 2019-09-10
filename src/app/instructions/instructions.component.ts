@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokequizService } from '../pokequiz.service';
 
 @Component({
   selector: 'app-instructions',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./instructions.component.css']
 })
 export class InstructionsComponent implements OnInit {
+  username: string;
 
-  constructor() { }
+  constructor(private pokequizService: PokequizService) { }
 
   ngOnInit() {
+    this.username = this.pokequizService.getUsername();
   }
 
 }

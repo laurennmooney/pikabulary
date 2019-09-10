@@ -55,6 +55,10 @@ export class PokequizService {
     return this.questionList;
   }
 
+  getUsername() {
+    return this.username;
+  }
+
   setResults(numberCorrect: number, pokemonCaught: any[]) {
     this.results = {
       username: this.username,
