@@ -8,8 +8,12 @@
     </p>
   </div>
   <div id="questionContainer">
-    <form #questionForm="ngForm" (ngSubmit)="checkAnswer(questionForm, index)">
-      <h3>{{ questionList[index].question_name }}</h3>
+    <form
+      id="questionForm"
+      #questionForm="ngForm"
+      (ngSubmit)="checkAnswer(questionForm, index)"
+    >
+      <h3 id="question">{{ questionList[index].question_name }}</h3>
       <div id="choicesContainer">
         <label
           ><input
@@ -44,7 +48,10 @@
           />{{ questionList[index].choice_4 }}</label
         >
       </div>
-      <button id="throwButton">Throw Pokeball!</button>
+      <button id="throwButton">
+        <img src="https://img.icons8.com/color/48/000000/pokeball--v2.png" />
+        Throw Pokeball!
+      </button>
     </form>
   </div>
   <div id="pokemonImageContainer">
@@ -60,6 +67,6 @@
   <!-- <div class="ballbounce"></div> -->
 
   <div class="ballcontainer">
-    <div class="ballthrow"></div>
+    <div class="ball"></div>
   </div>
 </main>
