@@ -3,7 +3,8 @@ main {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../../assets/pokemon-nature-background-2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../assets/pokemon-nature-background-2.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -15,7 +16,8 @@ main {
   text-align: center;
 }
 
-#pokemonCounter, #wrongAnswerCounter {
+#pokemonCounter,
+#wrongAnswerCounter {
   margin: 10px;
   padding: 5px 10px;
   font-weight: bold;
@@ -60,41 +62,82 @@ main {
   margin-top: 100px;
 }
 
-/* Ball object to be animated */
 .ballthrow {
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
-}
-
-.ballbounce {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   background-color: #ff5722;
+}
+/* BALL ANIMATIONS */
 
-  /* Ball animation */
-
-  animation: bounce 0.2s;
+/* animation: bounce 0.2s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-iteration-count: infinite;
+} */
+
+/* Bounce */
+
+/* @keyframes bounce {
+  from {
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 50px, 0);
+  }
+} */
+
+/* Throw */
+
+@keyframes drawArc1 {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-@keyframes ball-bounce {
+@keyframes drawArc2 {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.ballcontainer {
+  width: 600px;
+  animation: drawArc1 0.9s linear infinite;
+}
+.ballbounce {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* @keyframes ball-bounce {
   from {
     transform: translate3d(0, 0, 0);
   }
   to {
     transform: translate3d(0, 100px, 0);
   }
-}
+} */
 
-@keyframes crescendo {
-  0%   {transform: scale(.1);}
-  50%   {transform: scale(.5);}
-  100% {transform: scale(1.5);}
-}
+/* @keyframes crescendo {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+} */
 
 /* Prefix Support */
 /* ball {
@@ -104,14 +147,3 @@ main {
   -webkit-animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   -webkit-animation-iteration-count: infinite;
 } */
-
-@-webkit-keyframes bounce {
-  from {
-    -webkit-transform: translate3d(0, 50px, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    -webkit-transform: translate3d(0, 100px, 0);
-    transform: translate3d(0, 50px, 0); /* Adjust how high ball bounces */
-  }
-}
