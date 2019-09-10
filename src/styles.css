@@ -1,18 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 button {
   font-weight: bold;
-  background: #F4E393;
+  background: #f4e393;
   border: none;
   cursor: pointer;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -25,7 +25,7 @@ button {
 }
 
 button:hover {
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

@@ -129,8 +129,9 @@ main {
 /* ----------------- Throw Animation -----------------*/
 
 .ballcontainer {
-  width: 600px;
-  animation: drawArc1 0.9s linear infinite;
+  width: 800px;
+  margin-left: 500px;
+  animation: drawArc1 1.1s linear infinite;
 }
 
 @keyframes drawArc1 {
@@ -138,16 +139,16 @@ main {
     transform: rotate(180deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
   }
 }
 
-@keyframes drawArc2 {
+@keyframes shrinking {
   0% {
-    transform: rotate(-90deg);
+    transform: scale(1);
   }
   100% {
-    transform: rotate(0deg);
+    transform: scale(0.05);
   }
 }
 
