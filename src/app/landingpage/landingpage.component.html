@@ -13,30 +13,32 @@
       <div id="gradeSelectionSection">
       <h3>Select your grade level</h3>
       <div class="gradeSelectionInputs">
-        <label>
+        <div id="gradeRadioandLabel">
           <input
+            id="grade_3"
             type="radio"
             name="gradeLevel"
             value="grade_3"
             ngModel
-          />3rd</label
-        >
-
-        <label>
-          <input type="radio" name="gradeLevel" value="grade_4"
-          ngModel/>4th</label
-        >
-
-        <label>
-          <input
+          /><label for="grade_3"
+          id="gradeChoiceLabel">3rd</label>
+        </div>
+        <div id="gradeRadioandLabel">
+          <input type="radio" id="grade_4"
+          name="gradeLevel" value="grade_4"
+          ngModel/><label for="grade_4" id="gradeChoiceLabel">4th</label
+        ></div>
+        <div id="gradeRadioandLabel">
+          <input id="grade_5"
             type="radio"
             name="gradeLevel"
             value="grade_5"
             ngModel
-          />5th</label
-        >
+          /><label id="gradeChoiceLabel"
+          for="grade_5">5th</label
+        ></div>
       </div>
-      </div>
+    </div>
       <button id="goButton">Let's go!</button>
     </form>
   </div>

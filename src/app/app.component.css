@@ -9,4 +9,10 @@ header {
 nav a {
     text-decoration: none;
     padding: 5px 10px;
+    color: #F4E393;
+    font-weight: lighter;
+}
+
+nav a:hover {
+    font-weight: normal;
 }

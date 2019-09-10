@@ -20,7 +20,7 @@ main {
   padding: 20px;
   margin: 30px 0;
   width: 70%;
-  height: 30%;
+  height: 35%;
 }
 
 form {
@@ -36,13 +36,35 @@ input[id=name] {
     align-self: center;
 }
 
-input[id=name]:focus {
-    background: rgba(222, 73, 65, 0.438);
-}
-
 #gradeSelectionSection {
     margin: 20px 0;
 }
+
+.gradeSelectionInputs {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+#gradeRadioandLabel label {
+  padding: 5px 20px;
+  margin: 5px;
+  background: gray;
+}
+
+#gradeRadioandLabel label:hover {
+  box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+input[type=radio]:checked+#gradeChoiceLabel {
+  background: #DE4841;
+  box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 
 h2,
 h3 {
@@ -53,7 +75,7 @@ h3 {
     align-self: center;
     width: 100px;
     padding: 5px 10px;
-    margin: 5px;
+    margin: 5px 0 10px 0;
 }
 
 /* media queries */
