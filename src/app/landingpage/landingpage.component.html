@@ -7,10 +7,12 @@
         type="text"
         placeholder="Your name here!"
         name="userName"
+        id="name"
         ngModel
       />
+      <div id="gradeSelectionSection">
       <h3>Select your grade level</h3>
-      <div class="gradeSelectionSection">
+      <div class="gradeSelectionInputs">
         <label>
           <input
             type="radio"
@@ -33,6 +35,7 @@
             ngModel
           />5th</label
         >
+      </div>
       </div>
       <button id="goButton">Let's go!</button>
     </form>
