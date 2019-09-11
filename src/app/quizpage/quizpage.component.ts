@@ -133,13 +133,12 @@ export class QuizpageComponent implements OnInit {
       this.throwBall();
       this.caughtPokemon.push(this.pokemonList[index]);
       console.log(this.caughtPokemon);
-      setTimeout(() => {
-        this.nextQuestion();
-      }, 3000);
     } else {
       this.numberWrong++;
-      this.nextQuestion();
     }
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 3000);
     form.reset();
 
     if (this.numberWrong === 3) {

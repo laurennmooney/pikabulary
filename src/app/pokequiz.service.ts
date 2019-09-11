@@ -64,27 +64,29 @@ export class PokequizService {
       username: this.username,
       score: numberCorrect,
       caughtPokemon: pokemonCaught
-    }
+    };
 
     this.currentUserScore = {
       username: this.username,
       score: numberCorrect
-    }
+    };
   }
 
   sendResultsToResultsComponent() {
     return this.results;
   }
-  
+
   setUserScore() {
     return this.currentUserScore;
   }
 
   postToScoreboard() {
     console.log(this.currentUserScore);
-    this.http.post("http://localhost:8080/scores", this.setUserScore()).subscribe(response => {
-      this.scoreboard = response;
-    });
+    this.http
+      .post("http://localhost:8080/scores", this.setUserScore())
+      .subscribe(response => {
+        this.scoreboard = response;
+      });
   }
 
   getScoreboard() {
