@@ -1,79 +1,80 @@
 main {
-    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url("../../assets/scores-pikachu.jpg");
-    background-size: cover;
-    background-position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../assets/scores-pikachu.jpg");
+  background-size: cover;
+  background-position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #scoreboardTitle {
-    color: black;
-    margin: 10px 0 0 0;
+  color: black;
+  margin: 10px 0 0 0;
 }
 
 #scoreList {
-    margin: 20px 0;
-    background-color: white;
-    padding: 2px;
-    box-shadow: 0px 0px 10px 0px #000000;
-    width: 450px;
-} 
+  margin: 20px 0;
+  background-color: white;
+  padding: 2px;
+  box-shadow: 0px 0px 10px 0px #000000;
+  width: 450px;
+}
 
 #userScore {
-    height: 2.5em;
-    align-items: center;
-    padding: 0 20px;
+  height: 2.5em;
+  align-items: center;
+  padding: 0 20px;
 }
 
 #userScore:nth-child(even) {
-    background: lightgrey;
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
+  background: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 #userScore:nth-child(odd) {
-    background: rgb(156, 156, 156);
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
+  background: rgb(156, 156, 156);
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 button {
-    color: black;
-    background-color: #F4E393;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 15px;
-    height: 40px;
-    font-size: 14px;
-    box-shadow: 0px 0px 5px 0px #000000;
+  color: black;
+  background-color: #f4e393;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+  height: 40px;
+  font-size: 14px;
+  box-shadow: 0px 0px 5px 0px #000000;
 }
 
 button:hover {
-    background-color: #DE4841;
+  background-color: #de4841;
 }
 
 @media only screen and (min-width: 790px) {
-    main { 
-        background-size: cover;
-        background-attachment: fixed;
-        margin-left: 0;
-        align-items: flex-start;
-    }
+  main {
+    background-size: cover;
+    background-attachment: fixed;
+    margin-left: 0;
+    align-items: flex-start;
+  }
 
-    #scoreboardContainer {
-        margin-left: 50px;
-        padding: 20px;
-    }
+  #scoreboardContainer {
+    margin-left: 50px;
+    padding: 20px;
+  }
 
-    button {
-        background-color: #DE4841;
-    } 
+  button {
+    background-color: #de4841;
+  }
 
-    button:hover {
-        background-color: #F4E393;
-    }
+  button:hover {
+    background-color: #f4e393;
+  }
 }

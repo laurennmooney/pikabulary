@@ -4,7 +4,8 @@ main {
   align-items: center;
   flex-direction: column;
   height: calc(100vh - 60px);
-  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../../assets/pokemon-nature-background-2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../assets/pokemon-nature-background-2.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center bottom;
@@ -26,11 +27,11 @@ main {
 }
 
 #pokemonCounter {
-  background: #6FCB3F;
+  background: #6fcb3f;
 }
 
 #wrongAnswerCounter {
-  background: #DE4841;
+  background: #de4841;
 }
 
 .number {
@@ -70,7 +71,7 @@ main {
   width: 75%;
 }
 
-input[type=radio] {
+input[type="radio"] {
   display: none;
 }
 
@@ -78,15 +79,15 @@ input[type=radio] {
   margin: 2px;
   padding: 5px 40px;
   width: 100%;
-} 
+}
 
 #answerChoiceLabel:hover {
   background: lightgrey;
   padding: 5px 40px;
-  width: 100%
+  width: 100%;
 }
 
-input[type=radio]:checked+#answerChoiceLabel {
+input[type="radio"]:checked + #answerChoiceLabel {
   background: rgba(128, 128, 128, 0.692);
   padding: 5px 40px;
   width: 100%;
@@ -156,7 +157,7 @@ input[type=radio]:checked+#answerChoiceLabel {
 
 .ballcontainer {
   width: 800px;
-  margin-left: 500px;
+  margin-left: 100px;
   animation: drawArc1 1.1s linear infinite;
 }
 
@@ -216,14 +217,14 @@ input[type=radio]:checked+#answerChoiceLabel {
   #answerChoiceLabel {
     margin: 5px;
     padding: 10px 15px;
-  } 
-  
+  }
+
   #answerChoiceLabel:hover {
     background: lightgrey;
     padding: 10px 15px;
   }
-  
-  input[type=radio]:checked+#answerChoiceLabel {
+
+  input[type="radio"]:checked + #answerChoiceLabel {
     background: rgba(128, 128, 128, 0.692);
     padding: 10px 15px;
   }
