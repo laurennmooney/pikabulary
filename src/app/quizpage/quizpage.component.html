@@ -57,6 +57,20 @@
         Throw Pokeball!
       </button>
     </form>
+    <div *ngIf="isWrong" id="correctAnswer">
+      <p>Oh No! The Pokemon got away!</p>
+      <p>
+        Correct answer:
+        <span id="answer">{{ questionList[index].answer }}</span>
+      </p>
+    </div>
+    <div *ngIf="isCorrect" id="caughtAlert">
+      <p>Great job!</p>
+      <p>
+        You added <span id="pokemonName">{{ pokemonList[index].name }}</span> to
+        your Pokedex!
+      </p>
+    </div>
   </div>
   <div id="pokemonImageContainer">
     <img
