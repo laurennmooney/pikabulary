@@ -1,8 +1,25 @@
+main {
+  height: calc(100vh - 50px);
+  background-image: url("../../assets/ocean.png");
+  background-size: cover;
+  padding-top: 30px;
+}
+
+.heading-container {
+  padding-top: 0;
+}
+
 .pokemon-tiles {
-  background-color: white;
-  border: 0.5px solid grey;
+  background-color: rgba(255, 255, 255, 0.514);
+  border: 0.5px solid rgba(128, 128, 128, 0.274);
   border-radius: 10px;
   padding: 10px;
   margin: 15px;
-  box-shadow: 5px 8px 6px lightgrey;
+  box-shadow: 5px 5px 3px black;
+}
+
+h1,
+h2 {
+  margin: 0;
+  text-align: center;
 }
