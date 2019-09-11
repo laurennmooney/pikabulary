@@ -5,12 +5,12 @@ body {
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 button {
   font-weight: bold;
-  background: #F4E393;
+  background: #f4e393;
   border: none;
   cursor: pointer;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -23,7 +23,7 @@ button {
 }
 
 button:hover {
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
