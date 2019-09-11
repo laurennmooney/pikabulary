@@ -1,16 +1,27 @@
+main {
+  position: relative;
+}
+
 header {
-  background: #de4841;
+
+  background: #DE4841;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
+#pikabularyLogo {
+  position: absolute;
+  height: 80px;
+  transform: rotate(-2deg);
+}
+
 nav a {
   color: black;
   text-decoration: none;
   padding: 5px 10px;
-  color: #f4e393;
+  color: #F4E393;
   font-weight: lighter;
 }
 

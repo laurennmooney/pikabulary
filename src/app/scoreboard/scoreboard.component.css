@@ -9,10 +9,15 @@ main {
   text-align: center;
 }
 
-#scoreboardTitle {
-  color: black;
-  margin: 10px 0 0 0;
+
+#scoreboardContainer {
+    margin: 60px;
 }
+
+#scoreboardTitle {
+    margin: 20px;
+    height: 40px;
+} 
 
 #scoreList {
   margin: 20px 0;
@@ -53,9 +58,6 @@ button {
   box-shadow: 0px 0px 5px 0px #000000;
 }
 
-button:hover {
-  background-color: #de4841;
-}
 
 @media only screen and (min-width: 790px) {
   main {
@@ -65,16 +67,9 @@ button:hover {
     align-items: flex-start;
   }
 
-  #scoreboardContainer {
-    margin-left: 50px;
-    padding: 20px;
-  }
 
-  button {
-    background-color: #de4841;
-  }
-
-  button:hover {
-    background-color: #f4e393;
-  }
+    #scoreboardContainer {
+        margin-left: 50px;
+        padding: 20px;
+    }
 }

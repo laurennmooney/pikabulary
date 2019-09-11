@@ -87,15 +87,16 @@ import {
   ]
 })
 export class QuizpageComponent implements OnInit {
-  pokemon: any;
   pokemonList: any[] = [];
   index: number = 0;
   questionList: any;
-  numberCorrect: number = 0;
-  numberWrong: number = 0;
+  numberCorrect: number;
+  numberWrong: number;
   caughtPokemon: any[] = [];
   throw: boolean = false;
   fade: boolean = false;
+  isWrong: boolean = false;
+  isCorrect: boolean = false;
 
   constructor(
     private pokequizService: PokequizService,
@@ -103,18 +104,33 @@ export class QuizpageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.pokemonList = this.pokequizService.getPokemonList();
-    console.log(this.pokemonList);
+    this.pokemonList = this.getRandomPokemon();
     this.pokequizService.getQuestionList().subscribe(response => {
       this.questionList = response;
       console.log(this.questionList);
     });
+
+    this.numberWrong = 0;
+    this.numberCorrect = 0;
+  }
+
+  getRandomPokemon(): any[] {
+    for (let i = 0; i <= 50; i++) {
+      const randomId = Math.floor(Math.random() * 151) + 1;
+
+      this.pokequizService.getPokemonList(randomId).subscribe(response => {
+        this.pokemonList.push(response);
+      });
+    }
+    return this.pokemonList;
   }
 
   nextQuestion() {
     this.index++;
     this.fade = false;
     this.throw = false;
+    this.isWrong = false;
+    this.isCorrect = false;
   }
 
   throwBall() {
@@ -130,16 +146,19 @@ export class QuizpageComponent implements OnInit {
   checkAnswer(form: NgForm, index: number) {
     if (form.value.choice === this.questionList[index].answer) {
       this.numberCorrect++;
+      this.isCorrect = true;
       this.throwBall();
       this.caughtPokemon.push(this.pokemonList[index]);
-      console.log(this.caughtPokemon);
-      setTimeout(() => {
-        this.nextQuestion();
-      }, 3000);
     } else {
       this.numberWrong++;
-      this.nextQuestion();
+      this.isWrong = true;
+      this.fade = true;
     }
+
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 3500);
+
     form.reset();
 
     if (this.numberWrong === 3) {
