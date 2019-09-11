@@ -1,7 +1,10 @@
+<header></header>
+
 <main>
-  <p>resultspage works!</p>
-  <p>Congrats, {{ results.username }}!</p>
-  <p>You caught {{ results.score }} Pokemon!</p>
+  <div class="heading-container">
+    <h1>Great job, {{ results.username }}!</h1>
+    <h2>You caught {{ results.score }} Pokemon!</h2>
+  </div>
 
   <div class="pokemon-tiles" *ngFor="let pokemon of caughtPokemon; index as i">
     <img src="{{ pokemon.sprites.front_default }}" />

@@ -1,23 +1,23 @@
 header {
-    background: #DE4841;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  background: #de4841;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 nav a {
-    color: black;
-    text-decoration: none;
-    padding: 5px 10px;
-    color: #F4E393;
-    font-weight: lighter;
+  color: black;
+  text-decoration: none;
+  padding: 5px 10px;
+  color: #f4e393;
+  font-weight: lighter;
 }
 
 nav a:hover {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 header .active {
-    font-weight: normal;
+  font-weight: normal;
 }
