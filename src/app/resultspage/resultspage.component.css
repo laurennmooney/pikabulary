@@ -1,8 +1,9 @@
 main {
-  height: calc(100vh - 50px);
   background-image: url("../../assets/ocean.png");
   background-size: cover;
   padding-top: 30px;
+  background-attachment: fixed;
+  background-position: center bottom;
 }
 
 .heading-container {
@@ -10,12 +11,14 @@ main {
 }
 
 .pokemon-tiles {
-  background-color: rgba(255, 255, 255, 0.514);
+  background-color: rgba(255, 255, 255, 0.74);
   border: 0.5px solid rgba(128, 128, 128, 0.274);
   border-radius: 10px;
   padding: 10px;
   margin: 15px;
   box-shadow: 5px 5px 3px black;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 h1,
