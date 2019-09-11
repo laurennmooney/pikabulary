@@ -103,23 +103,12 @@ export class QuizpageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.pokemonList = this.getPokemonList();
+    this.pokemonList = this.pokequizService.getPokemonList();
     console.log(this.pokemonList);
     this.pokequizService.getQuestionList().subscribe(response => {
       this.questionList = response;
       console.log(this.questionList);
     });
-  }
-
-  getPokemonList() {
-    for (let i = 0; i <= 50; i++) {
-      const randomId = Math.floor(Math.random() * 151) + 1;
-      console.log(randomId);
-      this.pokequizService.getPokemonList(randomId).subscribe(response => {
-        this.pokemonList.push(response);
-      });
-    }
-    return this.pokemonList;
   }
 
   nextQuestion() {
@@ -149,7 +138,7 @@ export class QuizpageComponent implements OnInit {
     }
     setTimeout(() => {
       this.nextQuestion();
-    }, 2000);
+    }, 3000);
     form.reset();
 
     if (this.numberWrong === 3) {
