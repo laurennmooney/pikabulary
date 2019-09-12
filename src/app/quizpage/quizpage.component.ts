@@ -51,7 +51,6 @@ import {
               offset: 0.9
             }),
             style({
-              boxShadow: "0 0 20px 10px #FCDC04",
               transform:
                 "rotate(0deg) translateX(35%) translateY(-75%)scale(1)",
               offset: 1
