@@ -86,7 +86,7 @@ input[type="radio"] {
   width: 100%;
 }
 
-input[type="radio"]:checked + #answerChoiceLabel {
+input[type="radio"]:checked+#answerChoiceLabel {
   background: rgba(128, 128, 128, 0.692);
   padding: 5px 40px;
   width: 100%;
