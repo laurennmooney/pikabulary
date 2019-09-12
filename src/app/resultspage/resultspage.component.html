@@ -4,12 +4,16 @@
     <h2>You caught {{ results.score }} Pokemon!</h2>
   </div>
 
-  <section>
+  <section id="pokemon-card-container">
     <div
       class="pokemon-tiles"
       *ngFor="let pokemon of caughtPokemon; index as i"
     >
       <img src="{{ pokemon.sprites.front_default }}" />
+      <div id="pokemonInfo">
+        <p>#{{ pokemon.id }}</p>
+        <p>{{ pokemon.name }}</p>
+      </div>
     </div>
   </section>
 </main>

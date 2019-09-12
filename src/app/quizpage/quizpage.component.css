@@ -48,7 +48,8 @@ main {
   margin: 15px;
   padding: 15px 10px;
   width: 80%;
-  /* height: 20%; */
+  position: relative;
+  z-index: 1;
 }
 
 #question {
@@ -63,7 +64,7 @@ main {
 }
 
 #choicesContainer {
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,18 +97,20 @@ input[type="radio"]:checked+#answerChoiceLabel {
 #pokemonImageContainer {
   margin-top: 5%;
   position: fixed;
-  bottom: 0;
+  bottom: -30px;
+  /* z-index: 1; */
 }
 
 #pokemonImage {
   position: relative;
-  height: 290px;
+  height: 250px;
 }
 
 #pokeball {
   position: absolute;
+  z-index: 2;
   border-radius: 50%;
-  height: 40px;
+  height: 50px;
   bottom: 50%;
   right: 35%;
   transform: translate(50%, -100%);
@@ -130,6 +133,7 @@ input[type="radio"]:checked+#answerChoiceLabel {
 
 #correctAnswer,
 #caughtAlert {
+  font-size: 16px;
   padding: 10px;
   margin-top: 10px;
 }
@@ -189,7 +193,7 @@ input[type="radio"]:checked+#answerChoiceLabel {
     padding: 10px 15px;
   }
 
-  input[type="radio"]:checked + #answerChoiceLabel {
+  input[type="radio"]:checked+#answerChoiceLabel {
     background: rgba(128, 128, 128, 0.692);
     padding: 10px 15px;
   }
