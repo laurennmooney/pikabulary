@@ -3,8 +3,7 @@ main {
 }
 
 header {
-
-  background: #DE4841;
+  background: #de4841;
   height: 50px;
   display: flex;
   align-items: center;
@@ -21,7 +20,7 @@ nav a {
   color: black;
   text-decoration: none;
   padding: 5px 10px;
-  color: #F4E393;
+  color: #f4e393;
   font-weight: lighter;
 }
 
