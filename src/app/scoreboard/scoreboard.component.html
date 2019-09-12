@@ -1,12 +1,11 @@
 <main>
-    <div id="scoreboardContainer">
+  <div id="scoreboardContainer">
         <div id="scoreList">
         <img id="scoreboardTitle" src="../../assets/Scoreboard.png" />
             <div id="userScore" *ngFor="let score of scoreboard">
                 <p>{{ score.username }}</p>
                 <p>{{ score.score }}</p>
             </div>
-        </div>
         <button routerLink="/home">Play again!</button>
-    </div>
+  </div>
 </main>
