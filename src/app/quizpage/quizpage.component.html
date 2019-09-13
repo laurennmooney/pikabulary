@@ -7,7 +7,7 @@
       Number wrong: <span class="number">{{ numberWrong }}</span>
     </p>
   </div>
-  <div id="questionContainer">
+  <div [ngClass]="{ 'greyedOut': isWrong || isCorrect }" id="questionContainer">
     <form
       id="questionForm"
       #questionForm="ngForm"
