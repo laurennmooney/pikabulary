@@ -1,5 +1,8 @@
 main {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200vh;
   background-image: linear-gradient(rgba(0, 0, 0, -0.8), rgba(0, 0, 0, -0.8)),
     url("../../assets/ocean.png");
   background-size: cover;
@@ -15,12 +18,31 @@ main {
   justify-content: center;
 }
 
+#pokemon-card-container {
+  width: 95%;
+}
+
 .pokemon-tiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.74);
   box-shadow: 0px 0px 10px 0px #000000;
   border-radius: 10px;
   padding: 10px;
   margin: 15px;
+  width: 27%;
+}
+
+#pokemonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pokemonInfo p {
+  margin: 0;
+  text-transform: capitalize;
 }
 
 section {
@@ -34,4 +56,19 @@ h1,
 h2 {
   margin: 0;
   text-align: center;
+}
+
+@media only screen and (min-width: 982px) {
+
+  .pokemon-tiles {
+    flex-direction: row;
+  }
+
+  section {
+    justify-content: flex-start;
+  }
+
+  #pokemon-card-container {
+    width: 80%;
+  }
 }

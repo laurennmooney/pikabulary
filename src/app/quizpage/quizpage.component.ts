@@ -149,6 +149,7 @@ export class QuizpageComponent implements OnInit {
       this.isCorrect = true;
       this.throwBall();
       this.caughtPokemon.push(this.pokemonList[index]);
+      console.log(this.caughtPokemon);
     } else {
       this.numberWrong++;
       this.isWrong = true;
