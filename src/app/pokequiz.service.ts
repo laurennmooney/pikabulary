@@ -74,9 +74,15 @@ export class PokequizService {
     return this.http.get(`http://localhost:8080/scores/${gradeLevel}`);
   }
 
-  getGrade3Scores() {}
+  getGrade3Scores() {
+    return this.http.get("http://localhost:8080/scores/grade_3");
+  }
 
-  getGrade4Scores() {}
+  getGrade4Scores() {
+    return this.http.get("http://localhost:8080/scores/grade_4");
+  }
 
-  getGrade5Scores() {}
+  getGrade5Scores() {
+    return this.http.get("http://localhost:8080/scores/grade_5");
+  }
 }
