@@ -2,6 +2,11 @@
   <div id="scoreboardContainer">
     <div id="scoreList">
       <img id="scoreboardTitle" src="../../assets/Scoreboard.png" />
+      <div id="buttons">
+        <button class="gradeButtons">Grade 3</button>
+        <button class="gradeButtons">Grade 4</button>
+        <button class="gradeButtons">Grade 5</button>
+      </div>
       <div id="userScore" *ngFor="let score of scoreboard">
         <p>{{ score.username }}</p>
         <p>{{ score.score }}</p>
