@@ -24,7 +24,7 @@ main {
   justify-content: space-between;
 }
 
-.gradeButtons {
+#gradeButtons {
   padding: 5px 20px;
   margin: 5px;
   background: gray;
@@ -33,9 +33,13 @@ main {
   background-color: #de4841;
 }
 
-.gradeButtons:hover {
+#gradeButtons:hover {
   box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.5);
   /* width: 25%; */
+}
+
+#gradeButtons.selected {
+  background-color: #f4e393;
 }
 
 #scoreList {
