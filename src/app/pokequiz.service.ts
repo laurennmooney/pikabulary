@@ -7,10 +7,6 @@ import { Router } from "@angular/router";
   providedIn: "root"
 })
 export class PokequizService {
-  pokemonList: any[] = [];
-  randomPokemon: any;
-  selectedNumbers: number[] = [];
-  duplicate: boolean;
   questionList: any;
   username: string;
   results: any;
