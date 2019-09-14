@@ -7,12 +7,9 @@ import { Router } from "@angular/router";
   providedIn: "root"
 })
 export class PokequizService {
-  pokemonList: any[] = [];
-  randomPokemon: any;
-  selectedNumbers: number[] = [];
-  duplicate: boolean;
   questionList: any;
   username: string;
+  gradeLevel: string;
   results: any;
   currentUserScore: object;
   scoreboard: any;
@@ -25,6 +22,8 @@ export class PokequizService {
 
   submitUserInformation(username: string, gradeLevel: string) {
     this.username = username;
+    this.gradeLevel = gradeLevel;
+    console.log(this.gradeLevel);
     this.questionList = this.http.get(`http://localhost:8080/${gradeLevel}`);
   }
 
@@ -45,7 +44,8 @@ export class PokequizService {
 
     this.currentUserScore = {
       username: this.username,
-      score: numberCorrect
+      score: numberCorrect,
+      gradeLevel: this.gradeLevel
     };
   }
 
@@ -54,11 +54,15 @@ export class PokequizService {
   }
 
   setUserScore() {
+    console.log(this.currentUserScore);
     return this.currentUserScore;
   }
 
+  setUserGradeLevel() {
+    return this.gradeLevel;
+  }
+
   postToScoreboard() {
-    console.log(this.currentUserScore);
     this.http
       .post("http://localhost:8080/scores", this.setUserScore())
       .subscribe(response => {
@@ -66,7 +70,19 @@ export class PokequizService {
       });
   }
 
-  getScoreboard() {
-    return this.http.get("http://localhost:8080/scores");
+  getScoreboard(gradeLevel: string = "grade_3") {
+    return this.http.get(`http://localhost:8080/scores/${gradeLevel}`);
+  }
+
+  getGrade3Scores() {
+    return this.http.get("http://localhost:8080/scores/grade_3");
+  }
+
+  getGrade4Scores() {
+    return this.http.get("http://localhost:8080/scores/grade_4");
+  }
+
+  getGrade5Scores() {
+    return this.http.get("http://localhost:8080/scores/grade_5");
   }
 }
