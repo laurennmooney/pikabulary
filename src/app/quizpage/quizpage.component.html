@@ -1,4 +1,12 @@
 <main>
+  <div id="musicControls">
+    <div *ngIf="pause" id="playButton" (click)="clickToPlayMusic()">
+      <i class="fa fa-play"></i>
+    </div>
+    <div *ngIf="play" id="pauseButton" (click)="clickToPauseMusic()">
+      <i class="fa fa-pause"></i>
+    </div>
+  </div>
   <div id="scoreBox">
     <p id="pokemonCounter">
       Pokemon caught: <span class="number">{{ numberCorrect }}</span>
@@ -7,7 +15,7 @@
       Number wrong: <span class="number">{{ numberWrong }}</span>
     </p>
   </div>
-  <div [ngClass]="{ 'greyedOut': isWrong || isCorrect }" id="questionContainer">
+  <div [ngClass]="{ greyedOut: isWrong || isCorrect }" id="questionContainer">
     <form
       id="questionForm"
       #questionForm="ngForm"
@@ -52,7 +60,7 @@
           questionList[index].choice_4
         }}</label>
       </div>
-      <button id="throwButton">
+      <button [ngClass]="{ greyedOut: isWrong || isCorrect }" id="throwButton">
         <img src="../../assets/pokeball-icon.png" />
         Throw Pokeball!
       </button>

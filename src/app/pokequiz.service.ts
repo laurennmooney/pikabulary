@@ -93,7 +93,11 @@ export class PokequizService {
     this.audio.play();
   }
 
-  stopThemeMusic() {
+  resumeMusic() {
+    this.audio.play();
+  }
+
+  stopMusic() {
     this.audio.pause();
   }
 }
