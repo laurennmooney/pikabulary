@@ -27,11 +27,15 @@ main {
 }
 
 #pokemonCounter {
-  background: #6fcb3f;
+  border: 4px solid #6fcb3f;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.445);
 }
 
 #wrongAnswerCounter {
-  background: #de4841;
+  border: 4px solid #de4841;
+  background: rgba(255, 255, 255, 0.445);
+  border-radius: 5px;
 }
 
 .number {
@@ -50,6 +54,7 @@ main {
   width: 80%;
   position: relative;
   z-index: 1;
+  border-radius: 10px;
 }
 
 #questionContainer.greyedOut {
