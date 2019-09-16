@@ -28,3 +28,10 @@ nav a:hover {
 header .active {
   font-weight: normal;
 }
+
+@media only screen and (max-width: 500px) {
+  #pikabularyLogo {
+    height: 50px;
+    top: 15px;
+  }
+}
