@@ -42,7 +42,7 @@ p {
 }
 
 /* media queries */
-@media only screen and (min-width: 870px) {
+@media only screen and (min-width: 726px) {
   main {
     /* background-size: contain; */
     background-position: left bottom;
@@ -51,8 +51,8 @@ p {
   }
 
   #mainContainer {
-    width: 35%;
+    width: 45%;
     position: relative;
-    right: 70px;
+    right: 40px;
   }
 }

@@ -27,7 +27,7 @@ export class ScoreboardComponent implements OnInit {
   }
 
   autoSelectGrade() {
-    if (this.gradeLevel === undefined) {
+    if (this.gradeLevel === undefined || this.gradeLevel === "grade_3") {
       this.grade3Selected = true;
     } else if (this.gradeLevel === "grade_4") {
       this.grade4Selected = true;
