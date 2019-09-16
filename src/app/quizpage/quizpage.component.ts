@@ -97,6 +97,9 @@ export class QuizpageComponent implements OnInit {
   fade: boolean = false;
   isWrong: boolean = false;
   isCorrect: boolean = false;
+  battleMusic: string = "../../assets/battle-music.mp3";
+  pause: boolean;
+  play: boolean;
 
   constructor(
     private pokequizService: PokequizService,
@@ -104,6 +107,8 @@ export class QuizpageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.pokequizService.playThemeMusic(this.battleMusic);
+    this.play = true;
     this.pokemonList = this.getRandomPokemon();
     this.pokequizService.getQuestionList().subscribe(response => {
       this.questionList = response;
@@ -172,5 +177,17 @@ export class QuizpageComponent implements OnInit {
     this.pokequizService.setResults(numberCorrect, pokemonCaught);
     this.pokequizService.postToScoreboard();
     this.router.navigateByUrl("/results");
+  }
+
+  clickToPauseMusic() {
+    this.pokequizService.stopMusic();
+    this.pause = true;
+    this.play = false;
+  }
+
+  clickToPlayMusic() {
+    this.pokequizService.resumeMusic();
+    this.play = true;
+    this.pause = false;
   }
 }

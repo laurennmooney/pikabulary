@@ -1,15 +1,33 @@
 main {
+  position: relative;
   padding-top: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 60px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../../assets/pokemon-nature-background-2.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center bottom;
-  overflow: hidden;
+}
+
+#musicControls {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 10px;
+  color: rgba(255, 255, 255, 0.767);
+}
+
+#musicControls p {
+  font-size: 12px;
+  font-weight: lighter;
+  margin: 0 0 0 5px;
+}
+
+#playButton,
+#pauseButton {
+  padding: 5px;
 }
 
 #scoreBox {
@@ -27,11 +45,15 @@ main {
 }
 
 #pokemonCounter {
-  background: #6fcb3f;
+  border: 4px solid #6fcb3f;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.445);
 }
 
 #wrongAnswerCounter {
-  background: #de4841;
+  border: 4px solid #de4841;
+  background: rgba(255, 255, 255, 0.445);
+  border-radius: 5px;
 }
 
 .number {
@@ -50,10 +72,13 @@ main {
   width: 80%;
   position: relative;
   z-index: 1;
+  border-radius: 10px;
 }
 
-#questionContainer.greyedOut {
-  background: rgba(73, 71, 71, 0.877)
+#questionContainer.greyedOut,
+#throwButton.greyedOut {
+  background: rgba(73, 71, 71, 0.877);
+  pointer-events: none;
 }
 
 #question {
@@ -135,11 +160,11 @@ input[type="radio"]:checked+#answerChoiceLabel {
   margin-right: 5px;
 }
 
-#correctAnswer,
+#incorrectAlert,
 #caughtAlert {
   font-size: 16px;
   padding: 10px;
-  margin-top: 10px;
+  border-radius: 7px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -150,11 +175,11 @@ input[type="radio"]:checked+#answerChoiceLabel {
   background: rgba(144, 238, 144);
 }
 
-#correctAnswer {
+#incorrectAlert {
   background: rgba(222, 73, 65);
 }
 
-#correctAnswer p,
+#incorrectAlert p,
 #caughtAlert p {
   margin: 0;
   font-weight: bold;
