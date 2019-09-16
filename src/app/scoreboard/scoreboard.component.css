@@ -85,7 +85,7 @@ button {
   box-shadow: 0px 0px 5px 0px #000000;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 650px) {
   main {
     background-size: cover;
     background-attachment: fixed;
