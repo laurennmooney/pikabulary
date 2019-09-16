@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { PokequizService } from '../pokequiz.service';
+import { Component, OnInit } from "@angular/core";
+import { PokequizService } from "../pokequiz.service";
 
 @Component({
-  selector: 'app-resultspage',
-  templateUrl: './resultspage.component.html',
-  styleUrls: ['./resultspage.component.css']
+  selector: "app-resultspage",
+  templateUrl: "./resultspage.component.html",
+  styleUrls: ["./resultspage.component.css"]
 })
 export class ResultspageComponent implements OnInit {
   results: any;
   caughtPokemon: any[];
+  victoryMusic: string = "../../assets/victory-song.mp3";
 
-  constructor(private pokequizService: PokequizService) { }
+  constructor(private pokequizService: PokequizService) {}
 
   ngOnInit() {
+    this.pokequizService.playThemeMusic(this.victoryMusic);
     this.results = this.pokequizService.sendResultsToResultsComponent();
     console.log(this.results);
     this.caughtPokemon = this.results.caughtPokemon;
     console.log(this.caughtPokemon);
   }
-
 }
