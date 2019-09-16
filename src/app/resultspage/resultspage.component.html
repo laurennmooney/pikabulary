@@ -10,7 +10,7 @@
       class="pokemon-tiles"
       *ngFor="let pokemon of caughtPokemon; index as i"
     >
-      <img src="{{ pokemon.sprites.front_default }}" />
+      <img src="{{ pokemon.sprites.front_default }}" alt="Image of {{ pokemon.name }}" />
       <div id="pokemonInfo">
         <p>#{{ pokemon.id }}</p>
         <p>{{ pokemon.name }}</p>
