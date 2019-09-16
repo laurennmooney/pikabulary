@@ -11,6 +11,8 @@ import { PokequizService } from "../pokequiz.service";
 export class LandingpageComponent implements OnInit {
   audio: any;
   themeMusic: string = "../../assets/pokemon-route3-music.mp3";
+  userName: string;
+  gradeLevel: string;
 
   constructor(
     private router: Router,
