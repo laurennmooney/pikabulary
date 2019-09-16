@@ -91,6 +91,7 @@ export class PokequizService {
     this.audio.src = url;
     this.audio.load();
     this.audio.play();
+    this.audio.loop = true;
   }
 
   resumeMusic() {

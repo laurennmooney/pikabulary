@@ -6,6 +6,7 @@
     <div *ngIf="play" id="pauseButton" (click)="clickToPauseMusic()">
       <i class="fa fa-pause"></i>
     </div>
+    <p>Control the music here!</p>
   </div>
   <div id="scoreBox">
     <p id="pokemonCounter">
@@ -65,7 +66,7 @@
         Throw Pokeball!
       </button>
     </form>
-    <div *ngIf="isWrong" id="correctAnswer">
+    <div *ngIf="isWrong" id="incorrectAlert">
       <p>Oh, no! The Pokemon got away!</p>
       <p>
         Correct answer:

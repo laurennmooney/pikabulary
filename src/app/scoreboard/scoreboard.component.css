@@ -1,10 +1,9 @@
 main {
-  height: 100%;
+  min-height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../../assets/scores-pikachu.jpg");
-  /* background: url("../../assets/pokemon-route3-music.mp3") */
   background-size: cover;
-  background-position: fixed;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,13 +14,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 85%;
 }
 
 #scoreboardTitle {
   margin: 10px 0;
   width: 90%;
-  /* align-self: center; */
 }
 
 #buttonsContainer {
@@ -47,9 +45,9 @@ main {
 }
 
 #scoreList {
-  margin: 20px 0;
+  margin: 20px;
   background-color: white;
-  padding: 2px;
+  padding: 20px;
   box-shadow: 0px 0px 10px 0px #000000;
   width: 100%;
   border-radius: 10px;
@@ -59,26 +57,25 @@ main {
   height: 2.5em;
   align-items: center;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  border-radius: 5px;
+
 }
 
 #userScore:nth-child(even) {
   background: lightgrey;
-  display: flex;
-  justify-content: space-between;
-  margin: 5px;
 }
 
 #userScore:nth-child(odd) {
   background: rgb(156, 156, 156);
-  display: flex;
-  justify-content: space-between;
-  margin: 5px;
 }
 
 button {
   color: black;
   background-color: #f4e393;
-  width: 100%;
+  width: 105%;
   height: 30px;
   margin-bottom: 15px;
   height: 40px;
@@ -86,22 +83,20 @@ button {
   box-shadow: 0px 0px 5px 0px #000000;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 786px) {
   main {
-    background-size: cover;
-    background-attachment: fixed;
     align-items: flex-start;
   }
 
   #scoreboardContainer {
     margin-left: 50px;
-    width: 50%;
+    width: 40%;
   }
 }
 
-@media only screen and (min-width: 940px) {
+/* @media only screen and (min-width: 940px) {
   #scoreboardContainer {
     margin-left: 50px;
-    width: 35%;
-  }
-}
+    width: 40%;
+  } */
+/* } */

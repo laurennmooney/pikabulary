@@ -4,7 +4,6 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 60px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../../assets/pokemon-nature-background-2.jpg");
   background-size: cover;
@@ -15,13 +14,20 @@ main {
 #musicControls {
   position: absolute;
   display: flex;
+  align-items: center;
   left: 10px;
+  color: rgba(255, 255, 255, 0.767);
+}
+
+#musicControls p {
+  font-size: 12px;
+  font-weight: lighter;
+  margin: 0 0 0 5px;
 }
 
 #playButton,
 #pauseButton {
-  padding: 2px;
-  color: rgba(255, 255, 255, 0.767);
+  padding: 5px;
 }
 
 #scoreBox {
@@ -154,11 +160,11 @@ input[type="radio"]:checked+#answerChoiceLabel {
   margin-right: 5px;
 }
 
-#correctAnswer,
+#incorrectAlert,
 #caughtAlert {
   font-size: 16px;
   padding: 10px;
-  margin-top: 10px;
+  border-radius: 7px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -169,11 +175,11 @@ input[type="radio"]:checked+#answerChoiceLabel {
   background: rgba(144, 238, 144);
 }
 
-#correctAnswer {
+#incorrectAlert {
   background: rgba(222, 73, 65);
 }
 
-#correctAnswer p,
+#incorrectAlert p,
 #caughtAlert p {
   margin: 0;
   font-weight: bold;
