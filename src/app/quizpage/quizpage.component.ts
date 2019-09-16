@@ -97,6 +97,7 @@ export class QuizpageComponent implements OnInit {
   fade: boolean = false;
   isWrong: boolean = false;
   isCorrect: boolean = false;
+  battleMusic: string = "../../assets/battle-music.mp3";
 
   constructor(
     private pokequizService: PokequizService,
@@ -104,6 +105,7 @@ export class QuizpageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.pokequizService.playThemeMusic(this.battleMusic);
     this.pokemonList = this.getRandomPokemon();
     this.pokequizService.getQuestionList().subscribe(response => {
       this.questionList = response;

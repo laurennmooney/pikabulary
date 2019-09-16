@@ -13,6 +13,7 @@ export class PokequizService {
   results: any;
   currentUserScore: object;
   scoreboard: any;
+  audio: any = new Audio();
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -84,5 +85,15 @@ export class PokequizService {
 
   getGrade5Scores() {
     return this.http.get("http://localhost:8080/scores/grade_5");
+  }
+
+  playThemeMusic(url: string) {
+    this.audio.src = url;
+    this.audio.load();
+    this.audio.play();
+  }
+
+  stopThemeMusic() {
+    this.audio.pause();
   }
 }
