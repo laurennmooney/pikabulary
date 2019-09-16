@@ -13,16 +13,26 @@ main {
 
 .heading-container {
   margin-top: 40px;
+  padding: 20px 20px 10px 20px;
   display: flex;
   flex-flow: column;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0px 0px 10px 0px #000000;
+  width: 70%;
+  border-radius: 10px;
 }
 
 button {
   background-color: gray;
-  padding: 10px;
-  margin: 30px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px;
+  width: 80%;
+  align-self: center;
+}
+
+button:hover {
+  background: #f4e393;
 }
 
 #pokemon-card-container {
@@ -69,6 +79,10 @@ h2 {
 }
 
 @media only screen and (min-width: 736px) {
+  .heading-container {
+    width: 40%;
+  }
+
   #pokemon-card-container {
     width: 80%;
   }

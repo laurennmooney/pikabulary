@@ -19,7 +19,7 @@
               type="radio"
               name="gradeLevel"
               value="grade_3"
-              ngModel
+              [(ngModel)]="gradeLevel"
             /><label for="grade_3" id="gradeChoiceLabel">3rd</label>
           </div>
           <div id="gradeRadioandLabel">
@@ -28,7 +28,7 @@
               id="grade_4"
               name="gradeLevel"
               value="grade_4"
-              ngModel
+              [(ngModel)]="gradeLevel"
             /><label for="grade_4" id="gradeChoiceLabel">4th</label>
           </div>
           <div id="gradeRadioandLabel">
@@ -37,12 +37,12 @@
               type="radio"
               name="gradeLevel"
               value="grade_5"
-              ngModel
+              [(ngModel)]="gradeLevel"              
             /><label id="gradeChoiceLabel" for="grade_5">5th</label>
           </div>
         </div>
       </div>
-      <button id="goButton" [disabled]="!userName">Let's go!</button>
+      <button id="goButton" [disabled]="!userName || !gradeLevel">Let's go!</button>
     </form>
   </div>
 </main>

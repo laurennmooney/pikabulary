@@ -42,6 +42,7 @@ main {
   margin: 10px;
   padding: 5px 10px;
   font-weight: bold;
+  box-shadow: 0px 0px 10px 0px #000000;
 }
 
 #pokemonCounter {
@@ -163,7 +164,7 @@ input[type="radio"]:checked+#answerChoiceLabel {
 #incorrectAlert,
 #caughtAlert {
   font-size: 16px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 7px;
   position: absolute;
   top: 50%;

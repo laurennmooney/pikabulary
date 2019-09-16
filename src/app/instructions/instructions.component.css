@@ -43,23 +43,16 @@ p {
 }
 
 /* media queries */
-@media only screen and (min-width: 726px) {
+@media only screen and (min-width: 790px) {
   main {
-    /* background-size: contain; */
     background-position: left bottom;
     align-items: flex-end;
     padding: 40px;
   }
 
   #mainContainer {
-    width: 45%;
+    width: 35%;
     position: relative;
     right: 40px;
-  }
-}
-
-@media only screen and (min-width: 1150px) {
-  #mainContainer {
-    width: 30%;
   }
 }
