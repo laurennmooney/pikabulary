@@ -1,10 +1,6 @@
-main {
-  position: relative;
-}
-
 header {
   background: #de4841;
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -12,8 +8,9 @@ header {
 
 #pikabularyLogo {
   position: absolute;
-  height: 80px;
+  height: 65px;
   transform: rotate(-2deg);
+  cursor: pointer;
 }
 
 nav a {
@@ -30,4 +27,11 @@ nav a:hover {
 
 header .active {
   font-weight: normal;
+}
+
+@media only screen and (max-width: 500px) {
+  #pikabularyLogo {
+    height: 50px;
+    top: 5px;
+  }
 }
