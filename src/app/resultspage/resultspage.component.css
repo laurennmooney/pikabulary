@@ -18,6 +18,13 @@ main {
   justify-content: center;
 }
 
+button {
+  background-color: gray;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 5px;
+}
+
 #pokemon-card-container {
   width: 95%;
 }

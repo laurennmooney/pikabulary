@@ -18,5 +18,4 @@ export class ResultspageComponent implements OnInit {
     this.caughtPokemon = this.results.caughtPokemon;
     console.log(this.caughtPokemon);
   }
-
 }
