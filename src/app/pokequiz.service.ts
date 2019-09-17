@@ -36,11 +36,12 @@ export class PokequizService {
     return this.username;
   }
 
-  setResults(numberCorrect: number, pokemonCaught: any[]) {
+  setResults(numberCorrect: number, pokemonCaught: any[], incorrect) {
     this.results = {
       username: this.username,
       score: numberCorrect,
-      caughtPokemon: pokemonCaught
+      caughtPokemon: pokemonCaught,
+      incorrectlyAnswered: incorrect
     };
 
     this.currentUserScore = {

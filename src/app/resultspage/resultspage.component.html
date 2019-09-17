@@ -2,6 +2,14 @@
   <div class="heading-container">
     <h1>Great job, {{ results.username }}!</h1>
     <h2>You caught {{ results.score }} Pokemon!</h2>
+    <p>
+      Click the "show question" button to see what you learned during your
+      adventure!
+    </p>
+    <p>
+      Missed out a few Pokemon? Well, practice makes perfect! Scroll down to
+      quiz yourself on the questions you struggled with!
+    </p>
     <button routerLink="/scores">Check out the scoreboard!</button>
   </div>
 
@@ -10,10 +18,37 @@
       class="pokemon-tiles"
       *ngFor="let pokemon of caughtPokemon; index as i"
     >
-      <img src="{{ pokemon.sprites.front_default }}" alt="Image of {{ pokemon.name }}" />
-      <div id="pokemonInfo">
+      <img
+        src="{{ pokemon.sprites.front_default }}"
+        alt="Image of {{ pokemon.name }}"
+      />
+      <div id="pokemonInfo" *ngIf="!pokemon.showQuestion">
         <p>#{{ pokemon.id }}</p>
         <p>{{ pokemon.name }}</p>
+      </div>
+      <div id="questionAnswered" *ngIf="pokemon.showQuestion">
+        <p id="question">{{ pokemon.question.question_name }}</p>
+        <p>{{ pokemon.question.answer }}</p>
+      </div>
+      <button (click)="toggleQuestion(i)">
+        {{ pokemon.showQuestion ? "Show details!" : "Show question!" }}
+      </button>
+    </div>
+  </section>
+  <section id="questionsToStudy">
+    <h1>Questions you should continue to study!</h1>
+    <div
+      *ngFor="let question of answeredIncorrectly; index as i"
+      id="incorrectQuestionDiv"
+    >
+      <p id="question">{{ question.question_name }}</p>
+      <div id="iconAndAnswerContainer">
+        <p *ngIf="question.showCorrectAnswer" id="answer">
+          {{ question.answer }}
+        </p>
+        <p (click)="toggleCorrectAnswer(i)" id="show-or-hide">
+          {{ question.showCorrectAnswer ? "Hide Answer" : "Show Answer" }}
+        </p>
       </div>
     </div>
   </section>

@@ -23,6 +23,12 @@ main {
   border-radius: 10px;
 }
 
+.heading-container p {
+  margin: 5px 0;
+  text-align: center;
+  padding: 0 10px;
+}
+
 button {
   background-color: gray;
   padding: 10px 20px;
@@ -49,20 +55,32 @@ button:hover {
   border-radius: 10px;
   padding: 10px;
   margin: 15px;
-  width: 27%;
+  width: 40%;
 }
 
-#pokemonInfo {
+#pokemonInfo,
+#questionAnswered {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: bold;
-  font-size: 20px;
 }
 
 #pokemonInfo p {
   margin: 0;
+  font-size: 20px;
+  font-weight: bold;
   text-transform: capitalize;
+}
+
+#questionAnswered p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+#question {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 section {
@@ -78,12 +96,62 @@ h2 {
   text-align: center;
 }
 
-@media only screen and (min-width: 736px) {
+#questionsToStudy {
+  background-color: rgba(255, 255, 255, 0.74);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+#incorrectQuestionDiv {
+  margin: 5px;
+  width: 75%;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#incorrectQuestionDiv h1 {
+  margin: 10px 0;
+}
+
+#incorrectQuestionDiv p {
+  margin: 0
+}
+
+#show-or-hide {
+  color: grey;
+  font-size: 12px;
+}
+
+#show-or-hide:hover {
+  color: #de4841;
+}
+
+@media only screen and (min-width: 650px) {
+  .pokemon-tiles {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 820px) {
   .heading-container {
-    width: 40%;
+    width: 50%;
   }
 
   #pokemon-card-container {
-    width: 80%;
+    width: 90%;
+  }
+
+  .pokemon-tiles {
+    width: 20%;
+  }
+
+  #questionsToStudy {
+    width: 45%;
   }
 }

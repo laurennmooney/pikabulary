@@ -90,6 +90,7 @@ export class QuizpageComponent implements OnInit {
   pokemonList: any[] = [];
   index: number = 0;
   questionList: any;
+  answeredQuestions: any[] = [];
   numberCorrect: number;
   numberWrong: number;
   caughtPokemon: any[] = [];
@@ -100,6 +101,11 @@ export class QuizpageComponent implements OnInit {
   battleMusic: string = "../../assets/battle-music.mp3";
   pause: boolean;
   play: boolean;
+  pokemon: any;
+  question: object;
+  incorrectQuestion: any;
+  incorrectlyAnsweredQuestions: any[] = [];
+  showCorrectAnswer: boolean;
 
   constructor(
     private pokequizService: PokequizService,
@@ -120,7 +126,7 @@ export class QuizpageComponent implements OnInit {
   }
 
   getRandomPokemon(): any[] {
-    for (let i = 0; i <= 50; i++) {
+    for (let i = 0; i <= 70; i++) {
       const randomId = Math.floor(Math.random() * 151) + 1;
 
       this.pokequizService.getPokemonList(randomId).subscribe(response => {
@@ -149,14 +155,22 @@ export class QuizpageComponent implements OnInit {
   }
 
   checkAnswer(form: NgForm, index: number) {
+    this.answeredQuestions.push(this.questionList[index]);
+
     if (form.value.choice === this.questionList[index].answer) {
       this.numberCorrect++;
       this.isCorrect = true;
       this.throwBall();
-      this.caughtPokemon.push(this.pokemonList[index]);
-      console.log(this.caughtPokemon);
+
+      this.pokemon = this.pokemonList[index];
+      this.pokemon.question = this.questionList[index];
+      this.pokemon.showQuestion = false;
+      this.caughtPokemon.push(this.pokemon);
     } else {
       this.numberWrong++;
+      this.incorrectQuestion = this.questionList[index];
+      this.incorrectQuestion.showCorrectAnswer = false;
+      this.incorrectlyAnsweredQuestions.push(this.questionList[index]);
       this.isWrong = true;
       this.fade = true;
     }
@@ -167,14 +181,21 @@ export class QuizpageComponent implements OnInit {
 
     form.reset();
 
-    if (this.numberWrong === 3) {
-      console.log("You have three wrong");
-      this.endQuizAndGoToResults(this.numberCorrect, this.caughtPokemon);
+    if (this.numberWrong === 3 || this.answeredQuestions.length === 70) {
+      this.endQuizAndGoToResults(
+        this.numberCorrect,
+        this.caughtPokemon,
+        this.incorrectlyAnsweredQuestions
+      );
     }
   }
 
-  endQuizAndGoToResults(numberCorrect: number, pokemonCaught: any[]) {
-    this.pokequizService.setResults(numberCorrect, pokemonCaught);
+  endQuizAndGoToResults(
+    numberCorrect: number,
+    pokemonCaught: any[],
+    incorrect: any[]
+  ) {
+    this.pokequizService.setResults(numberCorrect, pokemonCaught, incorrect);
     this.pokequizService.postToScoreboard();
     this.router.navigateByUrl("/results");
   }
