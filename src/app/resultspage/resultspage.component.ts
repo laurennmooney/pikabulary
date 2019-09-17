@@ -37,4 +37,12 @@ export class ResultspageComponent implements OnInit {
       this.showIncorrectQuestions = false;
     }
   }
+
+  toggleCorrectAnswer(index: number) {
+    if (this.answeredIncorrectly[index].showCorrectAnswer === false) {
+      this.answeredIncorrectly[index].showCorrectAnswer = true;
+    } else {
+      this.answeredIncorrectly[index].showCorrectAnswer = false;
+    }
+  }
 }

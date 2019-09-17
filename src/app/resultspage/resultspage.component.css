@@ -23,6 +23,12 @@ main {
   border-radius: 10px;
 }
 
+.heading-container p {
+  margin: 5px 0;
+  text-align: center;
+  padding: 0 10px;
+}
+
 button {
   background-color: gray;
   padding: 10px 20px;
@@ -35,8 +41,7 @@ button:hover {
   background: #f4e393;
 }
 
-#pokemon-card-container,
-#questionsToStudy {
+#pokemon-card-container {
   width: 95%;
 }
 
@@ -50,8 +55,7 @@ button:hover {
   border-radius: 10px;
   padding: 10px;
   margin: 15px;
-  width: 27%;
-  position: relative;
+  width: 40%;
 }
 
 #pokemonInfo,
@@ -76,6 +80,7 @@ button:hover {
 
 #question {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 section {
@@ -97,6 +102,9 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+  padding: 20px;
+  margin: 30px 0;
 }
 
 #incorrectQuestionDiv {
@@ -107,13 +115,43 @@ h2 {
   text-align: center;
 }
 
-@media only screen and (min-width: 736px) {
+#incorrectQuestionDiv h1 {
+  margin: 10px 0;
+}
+
+#incorrectQuestionDiv p {
+  margin: 0
+}
+
+#show-or-hide {
+  color: grey;
+  font-size: 12px;
+}
+
+#show-or-hide:hover {
+  color: #de4841;
+}
+
+@media only screen and (min-width: 650px) {
+  .pokemon-tiles {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 820px) {
   .heading-container {
-    width: 40%;
+    width: 50%;
   }
 
-  #pokemon-card-container,
+  #pokemon-card-container {
+    width: 90%;
+  }
+
+  .pokemon-tiles {
+    width: 20%;
+  }
+
   #questionsToStudy {
-    width: 80%;
+    width: 45%;
   }
 }

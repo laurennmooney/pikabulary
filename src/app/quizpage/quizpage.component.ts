@@ -103,7 +103,9 @@ export class QuizpageComponent implements OnInit {
   play: boolean;
   pokemon: any;
   question: object;
+  incorrectQuestion: any;
   incorrectlyAnsweredQuestions: any[] = [];
+  showCorrectAnswer: boolean;
 
   constructor(
     private pokequizService: PokequizService,
@@ -166,6 +168,8 @@ export class QuizpageComponent implements OnInit {
       this.caughtPokemon.push(this.pokemon);
     } else {
       this.numberWrong++;
+      this.incorrectQuestion = this.questionList[index];
+      this.incorrectQuestion.showCorrectAnswer = false;
       this.incorrectlyAnsweredQuestions.push(this.questionList[index]);
       this.isWrong = true;
       this.fade = true;
