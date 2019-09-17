@@ -90,6 +90,7 @@ export class QuizpageComponent implements OnInit {
   pokemonList: any[] = [];
   index: number = 0;
   questionList: any;
+  answeredQuestions: any[] = [];
   numberCorrect: number;
   numberWrong: number;
   caughtPokemon: any[] = [];
@@ -120,7 +121,7 @@ export class QuizpageComponent implements OnInit {
   }
 
   getRandomPokemon(): any[] {
-    for (let i = 0; i <= 50; i++) {
+    for (let i = 0; i <= 70; i++) {
       const randomId = Math.floor(Math.random() * 151) + 1;
 
       this.pokequizService.getPokemonList(randomId).subscribe(response => {
@@ -149,6 +150,9 @@ export class QuizpageComponent implements OnInit {
   }
 
   checkAnswer(form: NgForm, index: number) {
+    this.answeredQuestions.push(this.questionList[index]);
+    console.log(this.answeredQuestions);
+
     if (form.value.choice === this.questionList[index].answer) {
       this.numberCorrect++;
       this.isCorrect = true;
@@ -167,8 +171,7 @@ export class QuizpageComponent implements OnInit {
 
     form.reset();
 
-    if (this.numberWrong === 3) {
-      console.log("You have three wrong");
+    if (this.numberWrong === 3 || this.answeredQuestions.length === 70) {
       this.endQuizAndGoToResults(this.numberCorrect, this.caughtPokemon);
     }
   }
