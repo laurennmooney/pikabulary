@@ -101,6 +101,9 @@ export class QuizpageComponent implements OnInit {
   battleMusic: string = "../../assets/battle-music.mp3";
   pause: boolean;
   play: boolean;
+  pokemon: any;
+  question: object;
+  incorrectlyAnsweredQuestions: any[] = [];
 
   constructor(
     private pokequizService: PokequizService,
@@ -151,16 +154,19 @@ export class QuizpageComponent implements OnInit {
 
   checkAnswer(form: NgForm, index: number) {
     this.answeredQuestions.push(this.questionList[index]);
-    console.log(this.answeredQuestions);
 
     if (form.value.choice === this.questionList[index].answer) {
       this.numberCorrect++;
       this.isCorrect = true;
       this.throwBall();
-      this.caughtPokemon.push(this.pokemonList[index]);
-      console.log(this.caughtPokemon);
+
+      this.pokemon = this.pokemonList[index];
+      this.pokemon.question = this.questionList[index];
+      this.pokemon.showQuestion = false;
+      this.caughtPokemon.push(this.pokemon);
     } else {
       this.numberWrong++;
+      this.incorrectlyAnsweredQuestions.push(this.questionList[index]);
       this.isWrong = true;
       this.fade = true;
     }
@@ -172,12 +178,20 @@ export class QuizpageComponent implements OnInit {
     form.reset();
 
     if (this.numberWrong === 3 || this.answeredQuestions.length === 70) {
-      this.endQuizAndGoToResults(this.numberCorrect, this.caughtPokemon);
+      this.endQuizAndGoToResults(
+        this.numberCorrect,
+        this.caughtPokemon,
+        this.incorrectlyAnsweredQuestions
+      );
     }
   }
 
-  endQuizAndGoToResults(numberCorrect: number, pokemonCaught: any[]) {
-    this.pokequizService.setResults(numberCorrect, pokemonCaught);
+  endQuizAndGoToResults(
+    numberCorrect: number,
+    pokemonCaught: any[],
+    incorrect: any[]
+  ) {
+    this.pokequizService.setResults(numberCorrect, pokemonCaught, incorrect);
     this.pokequizService.postToScoreboard();
     this.router.navigateByUrl("/results");
   }

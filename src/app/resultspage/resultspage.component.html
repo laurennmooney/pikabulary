@@ -10,11 +10,29 @@
       class="pokemon-tiles"
       *ngFor="let pokemon of caughtPokemon; index as i"
     >
-      <img src="{{ pokemon.sprites.front_default }}" alt="Image of {{ pokemon.name }}" />
-      <div id="pokemonInfo">
+      <img
+        src="{{ pokemon.sprites.front_default }}"
+        alt="Image of {{ pokemon.name }}"
+      />
+      <div id="pokemonInfo" *ngIf="!pokemon.showQuestion">
         <p>#{{ pokemon.id }}</p>
         <p>{{ pokemon.name }}</p>
       </div>
+      <div id="questionAnswered" *ngIf="pokemon.showQuestion">
+        <p id="question">{{ pokemon.question.question_name }}</p>
+        <p>{{ pokemon.question.answer }}</p>
+      </div>
+      <button (click)="toggleQuestion(i)">
+        {{ pokemon.showQuestion ? "Show details!" : "Show question!" }}
+      </button>
+    </div>
+  </section>
+  <section id="questionsToStudy">
+    <h1>Questions you should continue to study!</h1>
+    <div *ngFor="let question of answeredIncorrectly" id="incorrectQuestionDiv">
+      <p id="question">{{ question.question_name }}</p>
+      <i class="fa fa-lightbulb-o"></i>
+      <p>{{ question.answer }}</p>
     </div>
   </section>
 </main>
