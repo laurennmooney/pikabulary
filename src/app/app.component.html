@@ -1,16 +1,28 @@
 <main id="pageContainer">
   <img
     id="pikabularyLogo"
+    alt="Logo image for Pikabulary, a Pokemon-themed vocabulary game for 3rd through 5th graders"
     routerLink="/home"
     src="./../assets/pikabulary.png"
   />
   <header>
     <nav>
       <a routerLinkActive="active" routerLink="/home">Home</a>
+      <!-- <a routerLink="active" routerLink="/instructions"></a>
+
+      <a routerLink="active" routerLink="/quiz"></a> -->
+
       <!-- <a routerLinkActive="active" routerLink="/quiz">Quiz</a> -->
       <a routerLinkActive="active" routerLink="/scores">Scores</a>
     </nav>
   </header>
 
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
+  <div
+    [@routeAnimations]="
+      o && o.activatedRouteData && o.activatedRouteData['animation']
+    "
+  >
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
 </main>

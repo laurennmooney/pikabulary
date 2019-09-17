@@ -84,6 +84,7 @@
   <div id="pokemonImageContainer">
     <img
       @fadeOut
+      alt="Image of {{ pokemonList[index].name }}"
       *ngIf="!fade"
       id="pokemonImage"
       src="{{ pokemonList[index].sprites.front_default }}"

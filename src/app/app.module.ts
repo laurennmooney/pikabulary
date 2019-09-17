@@ -13,11 +13,31 @@ import { ResultspageComponent } from "./resultspage/resultspage.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
-  { path: "home", component: LandingpageComponent },
-  { path: "instructions", component: InstructionsComponent },
-  { path: "quiz", component: QuizpageComponent },
-  { path: "results", component: ResultspageComponent },
-  { path: "scores", component: ScoreboardComponent },
+  {
+    path: "home",
+    component: LandingpageComponent,
+    data: { animation: "Home" }
+  },
+  {
+    path: "instructions",
+    component: InstructionsComponent,
+    data: { animation: "Instructions" }
+  },
+  {
+    path: "quiz",
+    component: QuizpageComponent,
+    data: { animation: "Quiz" }
+  },
+  {
+    path: "results",
+    component: ResultspageComponent,
+    data: { animation: "Results" }
+  },
+  {
+    path: "scores",
+    component: ScoreboardComponent,
+    data: { animation: "Scores" }
+  },
   { path: "", redirectTo: "/home", pathMatch: "full" }
 ];
 
@@ -41,4 +61,3 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule {}
-

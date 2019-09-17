@@ -2,7 +2,7 @@
   <div class="heading-container">
     <h1>Great job, {{ results.username }}!</h1>
     <h2>You caught {{ results.score }} Pokemon!</h2>
-    <button routerLink="/scores">Scoreboard</button>
+    <button routerLink="/scores">Check out the scoreboard!</button>
   </div>
 
   <section id="pokemon-card-container">
@@ -10,7 +10,7 @@
       class="pokemon-tiles"
       *ngFor="let pokemon of caughtPokemon; index as i"
     >
-      <img src="{{ pokemon.sprites.front_default }}" />
+      <img src="{{ pokemon.sprites.front_default }}" alt="Image of {{ pokemon.name }}" />
       <div id="pokemonInfo">
         <p>#{{ pokemon.id }}</p>
         <p>{{ pokemon.name }}</p>
