@@ -1,7 +1,6 @@
 main {
   background-image: url('../../assets/pikachu-wallpaper.jpg');
   background-size: cover;
-  height: calc(100vh - 50px);
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -17,13 +16,18 @@ main {
   box-shadow: 0px 0px 10px 0px #000000;
   padding: 15px;
   margin: 30px 0;
-  width: 70%;
+  width: 80%;
   border-radius: 10px;
 }
 
 #welcomeHeader h2,
 h3 {
-  margin: 0;
+  margin: 5px 0 10px 0;
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
 }
 
 #welcomeHeader {
@@ -33,6 +37,11 @@ h3 {
 #instruction h3,
 p {
   margin: 0;
+}
+
+#instructions h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
 }
 
 #letsGoButton {
@@ -53,6 +62,7 @@ p {
   #mainContainer {
     width: 35%;
     position: relative;
-    right: 40px;
+    right: 80px;
+    font-size: 1.12em;
   }
 }

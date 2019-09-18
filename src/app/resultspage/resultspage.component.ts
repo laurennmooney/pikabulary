@@ -1,10 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { PokequizService } from "../pokequiz.service";
+import { trigger, transition, animate, style } from "@angular/animations";
 
 @Component({
   selector: "app-resultspage",
   templateUrl: "./resultspage.component.html",
-  styleUrls: ["./resultspage.component.css"]
+  styleUrls: ["./resultspage.component.css"],
+  animations: [
+    trigger("fadeIn", [
+      transition(":enter", [style({ opacity: 0 }), animate("0.5s")])
+    ])
+  ]
 })
 export class ResultspageComponent implements OnInit {
   results: any;

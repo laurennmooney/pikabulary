@@ -10,10 +10,10 @@
   </div>
   <div id="scoreBox">
     <p id="pokemonCounter">
-      Pokemon caught: <span class="number">{{ numberCorrect }}</span>
+      Pokemon caught <span class="number">{{ numberCorrect }}</span>
     </p>
     <p id="wrongAnswerCounter">
-      Number wrong: <span class="number">{{ numberWrong }}</span>
+      Run aways <span class="number">{{ numberWrong }}</span>
     </p>
   </div>
   <div [ngClass]="{ greyedOut: isWrong || isCorrect }" id="questionContainer">
@@ -29,7 +29,7 @@
           type="radio"
           name="choice"
           value="{{ questionList[index].choice_1 }}"
-          ngModel
+          [(ngModel)]="choice"
         /><label for="choice1" id="answerChoiceLabel">{{
           questionList[index].choice_1
         }}</label>
@@ -38,7 +38,7 @@
           type="radio"
           name="choice"
           value="{{ questionList[index].choice_2 }}"
-          ngModel
+          [(ngModel)]="choice"
         /><label for="choice2" id="answerChoiceLabel">{{
           questionList[index].choice_2
         }}</label>
@@ -47,7 +47,7 @@
           type="radio"
           name="choice"
           value="{{ questionList[index].choice_3 }}"
-          ngModel
+          [(ngModel)]="choice"
         /><label for="choice3" id="answerChoiceLabel">{{
           questionList[index].choice_3
         }}</label>
@@ -56,12 +56,16 @@
           type="radio"
           name="choice"
           value="{{ questionList[index].choice_4 }}"
-          ngModel
+          [(ngModel)]="choice"
         /><label for="choice4" id="answerChoiceLabel">{{
           questionList[index].choice_4
         }}</label>
       </div>
-      <button [ngClass]="{ greyedOut: isWrong || isCorrect }" id="throwButton">
+      <button
+        [ngClass]="{ greyedOut: isWrong || isCorrect }"
+        id="throwButton"
+        [disabled]="!choice"
+      >
         <img src="../../assets/pokeball-icon.png" />
         Throw Pokeball!
       </button>
