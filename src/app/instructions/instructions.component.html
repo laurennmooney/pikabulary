@@ -1,14 +1,19 @@
 <main>
   <div id="mainContainer">
     <div id="welcomeHeader">
-    <h2>Hey there, {{ username }}!</h2>
-    <h3>Are you ready to catch some Pokemon?!</h3>
+      <h2 class="game-font">Hey there, {{ username }}!</h2>
+      <h3>Are you ready to catch some Pokemon?!</h3>
     </div>
-    <div id="instructions">
+    <div class="game-font" id="instructions">
       <h3>Instructions</h3>
-      <p>Test your vocabulary skills! Answer each question correctly to catch that Pokémon! Catch as many as you can to be the best trainer that ever was!
+      <p>
+        Test your vocabulary skills! Answer each question correctly to catch
+        that Pokémon! Catch as many as you can to be the best trainer that ever
+        was!
       </p>
     </div>
-    <button id="letsGoButton" routerLink="/quiz">Let's catch some Pokemon!</button>
+    <button id="letsGoButton" routerLink="/quiz">
+      Let's catch some Pokemon!
+    </button>
   </div>
 </main>

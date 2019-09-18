@@ -1,7 +1,7 @@
 <main>
   <div id="mainContainer">
     <form #startGameForm="ngForm" (ngSubmit)="onSubmit(startGameForm)">
-      <h2>Welcome Trainer!</h2>
+      <h2 class="game-font">Welcome Trainer!</h2>
       <label for="name">Enter your name to begin!</label>
       <input
         type="text"
@@ -37,12 +37,14 @@
               type="radio"
               name="gradeLevel"
               value="grade_5"
-              [(ngModel)]="gradeLevel"              
+              [(ngModel)]="gradeLevel"
             /><label id="gradeChoiceLabel" for="grade_5">5th</label>
           </div>
         </div>
       </div>
-      <button id="goButton" [disabled]="!userName || !gradeLevel">Let's go!</button>
+      <button id="goButton" [disabled]="!userName || !gradeLevel">
+        Let's go!
+      </button>
     </form>
   </div>
 </main>
