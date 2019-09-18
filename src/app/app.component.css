@@ -67,6 +67,10 @@ header .active {
     height: 50px;
     top: 5px;
   }
+
+  #pikachu-head {
+    left: 205px;
+  }
 }
 
 @media only screen and (min-width: 726px) {
