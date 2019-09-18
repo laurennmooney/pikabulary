@@ -26,7 +26,9 @@ export class PokequizService {
     this.username = username;
     this.gradeLevel = gradeLevel;
     console.log(this.gradeLevel);
-    this.questionList = this.http.get(`${environment.pokeApi}/${gradeLevel}`);
+    this.questionList = this.http.get(
+      `${environment.databaseUrl}/${gradeLevel}`
+    );
   }
 
   getQuestionList() {
@@ -67,26 +69,26 @@ export class PokequizService {
 
   postToScoreboard() {
     this.http
-      .post(`${environment.pokeApi}/scores`, this.setUserScore())
+      .post(`${environment.databaseUrl}/scores`, this.setUserScore())
       .subscribe(response => {
         this.scoreboard = response;
       });
   }
 
   getScoreboard(gradeLevel: string = "grade_3") {
-    return this.http.get(`${environment.pokeApi}/scores/${gradeLevel}`);
+    return this.http.get(`${environment.databaseUrl}/scores/${gradeLevel}`);
   }
 
   getGrade3Scores() {
-    return this.http.get(`${environment.pokeApi}/scores/grade_3`);
+    return this.http.get(`${environment.databaseUrl}/scores/grade_3`);
   }
 
   getGrade4Scores() {
-    return this.http.get(`${environment.pokeApi}/scores/grade_4`);
+    return this.http.get(`${environment.databaseUrl}/scores/grade_4`);
   }
 
   getGrade5Scores() {
-    return this.http.get(`${environment.pokeApi}/scores/grade_5`);
+    return this.http.get(`${environment.databaseUrl}/scores/grade_5`);
   }
 
   playThemeMusic(url: string) {

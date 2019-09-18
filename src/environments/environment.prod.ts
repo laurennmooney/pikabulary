@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  pokeApi: "api"
+  databaseUrl: "https://pikabulary.herokuapp.com"
 };

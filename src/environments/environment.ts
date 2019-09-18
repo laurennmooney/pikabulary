@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  pokeApi: "api"
+  databaseUrl: "http://localhost:8080"
 };
 
 /*
