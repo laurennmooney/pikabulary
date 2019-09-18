@@ -73,6 +73,10 @@ button:hover {
   text-transform: capitalize;
 }
 
+#questionAnswered {
+  padding: 5px 10px;
+}
+
 #questionAnswered p {
   font-size: 16px;
   margin: 0;

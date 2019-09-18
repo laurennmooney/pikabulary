@@ -8,8 +8,7 @@ import { trigger, transition, animate, style } from "@angular/animations";
   styleUrls: ["./resultspage.component.css"],
   animations: [
     trigger("fadeIn", [
-      transition(":enter", [style({ opacity: 0 }), animate("0.5s")]),
-      transition(":leave", [animate("0.5s", style({ opacity: 0 }))])
+      transition(":enter", [style({ opacity: 0 }), animate("0.5s")])
     ])
   ]
 })
