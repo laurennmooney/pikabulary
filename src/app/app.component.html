@@ -8,9 +8,10 @@
   <header>
     <nav>
       <a routerLinkActive="active" routerLink="/home">Home</a>
-      <!-- <a routerLink="active" routerLink="/instructions"></a>
+      <!-- <a routerLink="active" routerLink="/instructions"></a> -->
 
-      <a routerLink="active" routerLink="/quiz"></a> -->
+      <!-- <a routerLinkActive="active" routerLink="/quiz">Quiz</a>
+      <a routerLinkActive="active" routerLink="/results">Results</a> -->
 
       <!-- <a routerLinkActive="active" routerLink="/quiz">Quiz</a> -->
       <a routerLinkActive="active" routerLink="/scores">Scores</a>
@@ -19,6 +20,7 @@
 
   <!-- <router-outlet></router-outlet> -->
   <div
+    id="route-container"
     [@routeAnimations]="
       o && o.activatedRouteData && o.activatedRouteData['animation']
     "
