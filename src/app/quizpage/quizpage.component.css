@@ -127,11 +127,12 @@ input[type="radio"]:checked+#answerChoiceLabel {
 #pokemonImageContainer {
   margin-top: 5%;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
 }
 
 #pokemonImage {
   position: relative;
+  top: 50px;
   height: 250px;
 }
 
@@ -143,7 +144,26 @@ input[type="radio"]:checked+#answerChoiceLabel {
   bottom: 50%;
   right: 35%;
   transform: translate(50%, -100%);
-  box-shadow: 0px 0px 25px 20px rgb(212, 175, 55)
+  box-shadow: 0px 0px 25px 20px rgb(212, 175, 55);
+  -webkit-animation: bounce 0.75s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+
+  30% {
+    transform: scale(1, 0.8) translate(0px, 5px);
+  }
+
+  75% {
+    transform: scale(1, 1.1) translate(0px, -15px);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
 }
 
 #throwButton {

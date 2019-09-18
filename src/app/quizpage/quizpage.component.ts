@@ -42,17 +42,12 @@ import {
             }),
             style({
               transform:
-                "rotate(30deg) translateX(-20%) translateY(-150%)scale(1.50)",
+                "rotate(30deg) translateX(-20%) translateY(-130%)scale(1.50)",
               offset: 0.8
             }),
             style({
               transform:
-                "rotate(10deg) translateX(-10%) translateY(-110%) scale(1)",
-              offset: 0.9
-            }),
-            style({
-              transform:
-                "rotate(0deg) translateX(35%) translateY(-75%)scale(1)",
+                "rotate(0deg) translateX(35%) translateY(-65%)scale(1)",
               offset: 1
             })
           ])

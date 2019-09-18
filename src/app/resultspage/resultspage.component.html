@@ -50,7 +50,7 @@
       >
         <p id="question">{{ question.question_name }}</p>
         <div id="answerContainer">
-          <p *ngIf="question.showCorrectAnswer" id="answer" @fadeIn>
+          <p *ngIf="question.showCorrectAnswer" id="answer" @fadeInAndOut>
             {{ question.answer }}
           </p>
           <p (click)="toggleCorrectAnswer(i)" id="show-or-hide">
