@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
+import { environment } from "../environments/environment";
 
 @Injectable({
   providedIn: "root"
@@ -25,7 +26,7 @@ export class PokequizService {
     this.username = username;
     this.gradeLevel = gradeLevel;
     console.log(this.gradeLevel);
-    this.questionList = this.http.get(`http://localhost:8080/${gradeLevel}`);
+    this.questionList = this.http.get(`${environment.pokeApi}/${gradeLevel}`);
   }
 
   getQuestionList() {
@@ -66,26 +67,26 @@ export class PokequizService {
 
   postToScoreboard() {
     this.http
-      .post("http://localhost:8080/scores", this.setUserScore())
+      .post(`${environment.pokeApi}/scores`, this.setUserScore())
       .subscribe(response => {
         this.scoreboard = response;
       });
   }
 
   getScoreboard(gradeLevel: string = "grade_3") {
-    return this.http.get(`http://localhost:8080/scores/${gradeLevel}`);
+    return this.http.get(`${environment.pokeApi}/scores/${gradeLevel}`);
   }
 
   getGrade3Scores() {
-    return this.http.get("http://localhost:8080/scores/grade_3");
+    return this.http.get(`${environment.pokeApi}/scores/grade_3`);
   }
 
   getGrade4Scores() {
-    return this.http.get("http://localhost:8080/scores/grade_4");
+    return this.http.get(`${environment.pokeApi}/scores/grade_4`);
   }
 
   getGrade5Scores() {
-    return this.http.get("http://localhost:8080/scores/grade_5");
+    return this.http.get(`${environment.pokeApi}/scores/grade_5`);
   }
 
   playThemeMusic(url: string) {
