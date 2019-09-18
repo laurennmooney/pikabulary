@@ -19,14 +19,17 @@ nav a {
   padding: 5px 10px;
   color: #f4e393;
   font-weight: lighter;
+  font-family: 'Press Start 2P', cursive;
 }
 
 nav a:hover {
   font-weight: normal;
+  text-shadow: 1px 0px 10px white;
 }
 
 header .active {
   font-weight: normal;
+  text-shadow: 1px 0px 10px white;
 }
 
 @media only screen and (max-width: 500px) {
