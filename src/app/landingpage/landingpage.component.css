@@ -7,7 +7,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 #mainContainer {
@@ -15,18 +14,16 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: space-evenly;
   box-shadow: 0px 0px 10px 0px #000000;
   padding: 15px;
   margin: 30px 0;
-  width: 70%;
+  width: 80%;
   border-radius: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
 input[id=name] {
@@ -68,7 +65,12 @@ input[type=radio]:checked+#gradeChoiceLabel {
 
 h2,
 h3 {
-  margin: 0 0 5px 0;
+  margin: 5px 0 10px 0;
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
 }
 
 #goButton {
@@ -89,7 +91,8 @@ h3 {
   #mainContainer {
     width: 35%;
     position: relative;
-    right: 40px;
+    right: 80px;
+    font-size: 1.12em;
   }
 
 }

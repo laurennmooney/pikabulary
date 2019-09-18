@@ -1,6 +1,6 @@
 <main>
   <div class="heading-container">
-    <h1>Great job, {{ results.username }}!</h1>
+    <h1 class="game-font">Great job, {{ results.username }}!</h1>
     <h2>You caught {{ results.score }} Pokemon!</h2>
     <p>
       Click the "show question" button to see what you learned during your
@@ -22,11 +22,11 @@
         src="{{ pokemon.sprites.front_default }}"
         alt="Image of {{ pokemon.name }}"
       />
-      <div id="pokemonInfo" *ngIf="!pokemon.showQuestion">
+      <div id="pokemonInfo" *ngIf="!pokemon.showQuestion" @fadeIn>
         <p>#{{ pokemon.id }}</p>
         <p>{{ pokemon.name }}</p>
       </div>
-      <div id="questionAnswered" *ngIf="pokemon.showQuestion">
+      <div id="questionAnswered" *ngIf="pokemon.showQuestion" @fadeIn>
         <p id="question">{{ pokemon.question.question_name }}</p>
         <p>{{ pokemon.question.answer }}</p>
       </div>
@@ -35,20 +35,24 @@
       </button>
     </div>
   </section>
-  <section id="questionsToStudy">
-    <h1>Questions you should continue to study!</h1>
-    <div
-      *ngFor="let question of answeredIncorrectly; index as i"
-      id="incorrectQuestionDiv"
-    >
-      <p id="question">{{ question.question_name }}</p>
-      <div id="iconAndAnswerContainer">
-        <p *ngIf="question.showCorrectAnswer" id="answer">
-          {{ question.answer }}
-        </p>
-        <p (click)="toggleCorrectAnswer(i)" id="show-or-hide">
-          {{ question.showCorrectAnswer ? "Hide Answer" : "Show Answer" }}
-        </p>
+  <section id="bottomBox">
+    <div id="questionsToStudy">
+      <h2 class="review-section-title game-font">
+        Questions you should continue to study!
+      </h2>
+      <div
+        *ngFor="let question of answeredIncorrectly; index as i"
+        id="incorrectQuestionDiv"
+      >
+        <p id="question">{{ question.question_name }}</p>
+        <div id="answerContainer">
+          <p *ngIf="question.showCorrectAnswer" id="answer" @fadeIn>
+            {{ question.answer }}
+          </p>
+          <p (click)="toggleCorrectAnswer(i)" id="show-or-hide">
+            {{ question.showCorrectAnswer ? "Hide Answer" : "Show Answer" }}
+          </p>
+        </div>
       </div>
     </div>
   </section>
