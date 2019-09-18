@@ -71,6 +71,24 @@ main {
   background: rgb(156, 156, 156);
 }
 
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+
+  30% {
+    transform: scale(1, 0.8) translate(0px, 10px);
+  }
+
+  75% {
+    transform: scale(1, 1.1) translate(0px, -25px);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+
 #playAgainButton {
   width: 100px;
   height: 100px;
@@ -81,11 +99,13 @@ main {
   bottom: 20px;
   padding: 10px;
   border-radius: 50%;
+  -webkit-animation: bounce 0.75s infinite;
 }
 
 #playAgainButton:hover {
   background: #de4841;
   text-shadow: #fff 1px 0 20px;
+  -webkit-animation: none;
 }
 
 @media only screen and (min-width: 786px) {
