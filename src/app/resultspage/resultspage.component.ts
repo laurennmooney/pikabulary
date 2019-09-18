@@ -9,6 +9,11 @@ import { trigger, transition, animate, style } from "@angular/animations";
   animations: [
     trigger("fadeIn", [
       transition(":enter", [style({ opacity: 0 }), animate("0.5s")])
+    ]),
+
+    trigger("fadeInAndOut", [
+      transition(":enter", [style({ opacity: 0 }), animate("0.5s")]),
+      transition(":leave", [animate("0.5s", style({ opacity: 0 }))])
     ])
   ]
 })

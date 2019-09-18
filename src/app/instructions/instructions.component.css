@@ -14,7 +14,7 @@ main {
   flex-direction: column;
   text-align: center;
   box-shadow: 0px 0px 10px 0px #000000;
-  padding: 15px;
+  padding: 20px 15px;
   margin: 30px 0;
   width: 80%;
   border-radius: 10px;
@@ -28,6 +28,7 @@ h3 {
 h2 {
   font-family: 'Press Start 2P', cursive;
   font-size: 22px;
+  line-height: 1.2em;
 }
 
 #welcomeHeader {
@@ -42,6 +43,10 @@ p {
 #instructions h3 {
   font-family: 'Press Start 2P', cursive;
   font-size: 16px;
+}
+
+#instructions {
+  padding: 0 10px;
 }
 
 #letsGoButton {
@@ -60,9 +65,16 @@ p {
   }
 
   #mainContainer {
-    width: 35%;
+    width: 50%;
     position: relative;
-    right: 80px;
+    right: 10px;
     font-size: 1.12em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #mainContainer {
+    width: 35%;
+    right: 80px;
   }
 }

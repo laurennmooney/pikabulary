@@ -6,6 +6,33 @@ header {
   justify-content: flex-end;
 }
 
+#pikachu-head {
+  position: absolute;
+  height: 30px;
+  left: 265px;
+  top: 27px;
+  opacity: 0.7;
+  -webkit-animation: bounce 0.75s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+
+  30% {
+    transform: scale(1, 0.8) translate(0px, 5px);
+  }
+
+  75% {
+    transform: scale(1, 1.1) translate(0px, -25px);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+
 #pikabularyLogo {
   position: absolute;
   height: 65px;
@@ -16,17 +43,19 @@ header {
 nav a {
   color: black;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 5px 15px;
   color: #f4e393;
-  font-weight: lighter;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
 }
 
 nav a:hover {
-  font-weight: normal;
+  text-shadow: 1px 0px 10px white;
 }
 
 header .active {
   font-weight: normal;
+  text-shadow: 1px 0px 10px white;
 }
 
 .router-container {
