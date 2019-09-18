@@ -29,16 +29,20 @@ main {
   padding: 0 10px;
 }
 
+#scoreboardButton {
+  background-color: #707070;
+}
+
 button {
-  background-color: gray;
   padding: 10px 20px;
   margin: 20px;
   width: 80%;
   align-self: center;
+  background: #f4e393;
 }
 
 button:hover {
-  background: #f4e393;
+  background: #707070;
 }
 
 #pokemon-card-container {
